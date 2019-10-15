@@ -21,12 +21,9 @@ class CreateServicosTable extends Migration
             $table->string('endereco');
             $table->dateTime('horaInicial');
             $table->dateTime('horaFinal');
-            $table->string('rg');
-            $table->decimal('lat', 11,7);
-            $table->decimal('lng', 11,7);
+            $table->string('id_dono');
             $table->string('status');
-            $table->string('avaliacao');
-
+            $table->string('avaliacao')->nullable();
         });
     }
 

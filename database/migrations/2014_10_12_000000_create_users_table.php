@@ -16,7 +16,7 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nome');
-            $table->string('sobrenome');
+            $table->string('sobrenome')->nullable();
             $table->string('rg')->nullable();
             $table->string('cpf')->nullable();
             $table->enum('sexo', ['m','f','o'])->nullable();
