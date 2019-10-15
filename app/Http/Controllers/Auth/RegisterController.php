@@ -80,6 +80,12 @@ class RegisterController extends Controller
         $user->uf = $data->uf;
         $user->telefone_1 = $data->telefone_1;
         $user->telefone_2 = $data->telefone_2;
+        if (!empty($data['img'])) {
+            $nomeArquivo = time() . '.' . $data['img']->extension();
+            $data['img']->storeAs('\uploads\storage', $nomeArquivo);
+            $user->url_img = $nomeArquivo;
+        }
+            
         $user->save();
         return redirect('/perfil');
     }

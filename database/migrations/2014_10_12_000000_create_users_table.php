@@ -30,6 +30,7 @@ class CreateUsersTable extends Migration
             $table->string('uf')->nullable();
             $table->string('telefone_1')->nullable();
             $table->string('telefone_2')->nullable();
+            $table->string('url_img')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
