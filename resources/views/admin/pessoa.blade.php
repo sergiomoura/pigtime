@@ -34,36 +34,36 @@
 </head>
 
 <body class="fix-header fix-sidebar card-no-border">
-        <div class="preloader">
+    
+    <div class="preloader">
         <svg class="circular" viewBox="25 25 50 50">
-            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+        </svg>
     </div>
+
     <div id="main-wrapper">
-            <header class="topbar">
+        <header class="topbar">
             <nav class="navbar top-navbar navbar-toggleable-sm navbar-light">
-                    <div class="navbar-header">
-                    <a class="navbar-brand" href="/">
-                        <b>
-                            
-                            <img src="{{url('./admin/assets/images/logo-pig-icon.png')}}" alt="homepage" class="light-logo" />
-                        </b>
-                        <span>
-                           
-                         <img src="{{url('./admin/assets/images/logo-pig-time.png')}}" class="light-logo" alt="homepage" /></span> </a>
+                <div class="navbar-header">
+                <a class="navbar-brand" href="/">
+                    <b>
+                        <img src="{{url('./admin/assets/images/logo-pig-icon.png')}}" alt="homepage" class="light-logo" />
+                    </b>
+                    <span>
+                    
+                <img src="{{url('./admin/assets/images/logo-pig-time.png')}}" class="light-logo" alt="homepage" /></span> </a>
                 </div>
-               
+            
                 <div class="navbar-collapse">
-                   
                     <ul class="navbar-nav mr-auto mt-md-0">
-                      
+                    
                         <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark" href="{{url('javascript:void(0)')}}"><i class="mdi mdi-menu"></i></a> </li>
-                       
+                    
                         <li class="nav-item hidden-sm-down search-box"> <a class="nav-link hidden-sm-down text-muted waves-effect waves-dark" href="{{url('javascript:void(0)')}}"><i class="ti-search"></i></a>
                             <form class="app-search">
                                 <input type="text" class="form-control" placeholder="Search & enter"> <a class="srh-btn"><i class="ti-close"></i></a> </form>
                         </li>
                     </ul>
-                
                     <ul class="navbar-nav my-lg-0">
                     
                         <li class="nav-item dropdown">
@@ -73,299 +73,169 @@
                 </div>
             </nav>
         </header>
-        
-        <div class="page-wrapper ml-0">
+    </div>
+
+    <!-- Avaliação e Comentários -->
+
+    <div class="card">
+        <div class="card-block little-profile text-center">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs profile-tab" role="tablist">
+                <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#avaliacao" role="tab">Avaliação</a> </li>
+                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#comentarios" role="tab">Comentários</a> </li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
             
-            <div class="container-fluid">
-                
-                    <!-- Column -->
-                    <div class="col-lg-12">
-                        <!-- Column -->
-                        <div class="card">
-                            <img class="card-img-top" src="{{url('./admin/assets/images/background/profile-bg.jpg')}}" alt="Card image cap">
-                            <div class="card-block little-profile text-center">
-                                <div class="pro-img"><img src="{{url('./admin/assets/images/users/4.jpg')}}" alt="user" /></div>
-                                <h3 class="m-b-0">Bruno Almeida</h3>
-                                <button type="button" class="btn btn-primary">Seguir</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12">
-                        <!-- Avaliação -->
-                        <div class="card">
-                            <div class="card-block little-profile text-center">
-                                
-
-
-<!-- Avaliação e Observação -->
-<div class="card">
-    <div class="card-block little-profile text-center">
-
-        <!-- Nav tabs -->
-    <ul class="nav nav-tabs profile-tab" role="tablist">
-        <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#aprovacao" role="tab">Preciso de</a> </li>
-        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#servicos" role="tab">Trabalhei em</a> </li>
-        
-    </ul>
-    <!-- Tab panes -->
-    <div class="tab-content">
-            <div class="tab-pane active" id="aprovacao" role="tabpanel">
-                <div class="card-block">
-                    <div class="profiletimeline">
-
-                        
+                <!--primeiro tab-->
+                <div class="tab-pane active" id="avaliacao" role="tabpanel">
+                    <div class="card-block">
                         <div class="sl-item">
-                            <div class="sl-left"> <img src="{{url('./admin/assets/images/users/2.jpg')}}" alt="user" class="img-circle"> </div>
                             <div class="sl-right">
-                                <div> <a href="#" class="link">Maria tem interesse em:</a> <span class="link">Instalar Quadro</span>
+                                <div> 
                                     <div class="m-t-20 row">
-                                        <div class="col-md-3 col-xs-12"><img src="{{url('./admin/assets/images/big/img1.jpg')}}" alt="user" class="img-responsive radius"></div>
-                                        <div class="col-md-9 col-xs-12">
-                                            <p> João, está aguardando sua aprovação para o serviço que você anunciou. Verifique o perfil do João atentamente e decida a aprovaçao o mais breve possível  </p> <a href="#" class="btn btn-warning" style="margin-right:4px"> Ver perfil</a> <a href="#" class="btn btn-primary" style="margin-right:4px"> Aprovar</a><a href="#" class="btn btn-danger"> Reprovar</a></div>
-                                    </div>
-                                
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <hr>
-                        <div class="sl-item">
-                                <div class="sl-left"> <img src="{{url('./admin/assets/images/users/2.jpg')}}" alt="user" class="img-circle"> </div>
-                                <div class="sl-right">
-                                    <div> <a href="#" class="link">Maria tem interesse em:</a> <span class="link">Instalar Quadro</span>
-                                        <div class="m-t-20 row">
-                                            <div class="col-md-3 col-xs-12"><img src="{{url('./admin/assets/images/big/img1.jpg')}}" alt="user" class="img-responsive radius"></div>
+                                        <div class="col-md-3 col-xs-12">
                                             <div class="col-md-9 col-xs-12">
-                                                <p> João, está aguardando sua aprovação para o serviço que você anunciou. Verifique o perfil do João atentamente e decida a aprovaçao o mais breve possível  </p> <a href="#" class="btn btn-warning" style="margin-right:4px"> Ver perfil</a> <a href="/p/3" class="btn btn-primary" style="margin-right:4px"> Aprovar</a><a href="#" class="btn btn-danger"> Reprovar</a></div>
-                                        </div>
-                                    
-                                    </div>
-                                </div>
-                            </div>
-                        <hr>
-                        <div class="sl-item">
-                            <div class="sl-left"> <img src="{{url('./admin/assets/images/users/2.jpg')}}" alt="user" class="img-circle"> </div>
-                            <div class="sl-right">
-                                <div> <a href="#" class="link">Maria tem interesse em:</a> <span class="link">Instalar Quadro</span>
-                                    <div class="m-t-20 row">
-                                        <div class="col-md-3 col-xs-12"><img src="{{url('./admin/assets/images/big/img1.jpg')}}" alt="user" class="img-responsive radius"></div>
-                                        <div class="col-md-9 col-xs-12">
-                                            <p> João, está aguardando sua aprovação para o serviço que você anunciou. Verifique o perfil do João atentamente e decida a aprovaçao o mais breve possível  </p> <a href="#" class="btn btn-warning" style="margin-right:4px"> Ver perfil</a> <a href="#" class="btn btn-primary" style="margin-right:4px"> Aprovar</a><a href="#" class="btn btn-danger"> Reprovar</a></div>
-                                    </div>
-                                
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--second tab-->
-            <div class="tab-pane" id="servicos" role="tabpanel">
-                <div class="card-block">
-                
-                    
-                            <div class="sl-item">
-                            
-                                <div class="sl-right">
-                                    <div> <a href="#" class="link">Maria tem interesse em:</a> <span class="link">Instalar Quadro</span>
-                                        <div class="m-t-20 row">
-                                            <div class="col-md-3 col-xs-12"><img src="{{url('./admin/assets/images/big/img1.jpg')}}" alt="user" class="img-responsive radius"></div>
-                                            <div class="col-md-9 col-xs-12">
-                                                <p> João, está aguardando sua aprovação para o serviço que você anunciou. Verifique o perfil do João atentamente e decida a aprovaçao o mais breve possível  </p> <a href="#" class="btn btn-primary" style="margin-right:4px"> Aprovado</a> <a href="#" class="btn btn-warning" style="margin-right:4px"> Ver anúncio</a>
-                                        </div>
-                                    
-                                    </div>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="sl-item">
-                                
-                                    <div class="sl-right">
-                                        <div> <a href="#" class="link">Maria tem interesse em:</a> <span class="link">Instalar Quadro</span>
-                                            <div class="m-t-20 row">
-                                                <div class="col-md-3 col-xs-12"><img src="{{url('./admin/assets/images/big/img1.jpg')}}" alt="user" class="img-responsive radius"></div>
-                                                <div class="col-md-9 col-xs-12">
-                                                    <p> João, está aguardando sua aprovação para o serviço que você anunciou. Verifique o perfil do João atentamente e decida a aprovaçao o mais breve possível  </p><a href="#" class="btn btn-danger"> Reprovado</a></div>
+                                                <img src="{{ url('img/star1.png') }}" style="width:27px;" id="s1">
+                                                <img src="{{ url('img/star1.png') }}" style="width:27px;" id="s2">             
+                                                <img src="{{ url('img/star1.png') }}" style="width:27px;" id="s3">
+                                                <img src="{{ url('img/star1.png') }}" style="width:27px;" id="s4">
+                                                <img src="{{ url('img/star.png') }}" style="width:27px;" id="s5">
                                             </div>
-                                        
                                         </div>
                                     </div>
                                 </div>
-                            <hr>
-                    
-            
-                    
-                    <h4 class="font-medium m-t-30">Meus progressos</h4>
-                    <hr>
-                    <h5 class="m-t-30">Aprovados <span class="pull-right">80%</span></h5>
-                    <div class="progress">
-                        <div class="progress-bar bg-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%; height:6px;"> <span class="sr-only">50% Complete</span> </div>
+                            </div>
+                        </div>
                     </div>
-                    <h5 class="m-t-30">Reprovados <span class="pull-right">15%</span></h5>
-                    <div class="progress">
-                        <div class="progress-bar bg-info" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%; height:6px;"> <span class="sr-only">50% Complete</span> </div>
+                </div>
+
+                <!--second tab-->
+                <div class="tab-pane" id="comentarios" role="tabpanel">
+                    <div class="card-block">
+                        <div class="sl-item">
+                            <div class="sl-right">
+                                <div> <a href="#" class="link">Maria tem interesse em:</a> <span class="link">Instalar AUSGIAUGS</span>
+                                    <div class="m-t-20 row">
+                                        <div class="col-md-3 col-xs-12"><img src="{{url('./admin/assets/images/big/img1.jpg')}}" alt="user" class="img-responsive radius"></div>
+                                        <div class="col-md-9 col-xs-12">
+                                            <p> João, está aguardando sua aprovação para o serviço que você anunciou. Verifique o perfil do João atentamente e decida a aprovaçao o mais breve possível  </p>
+                                            <a href="#" class="btn btn-primary" style="margin-right:4px"> Aprovado</a>
+                                            <a href="#" class="btn btn-warning" style="margin-right:4px"> Ver anúncio</a>
+                                        </div>
+                                    </div>
+                                
+                                </div>
+                            </div>
+                        </div>   
                     </div>
-        
                 </div>
             </div>
-            
         </div>
     </div>
-</div>
-
-    </div>
-</div>
 
 
+    
+                            <!-- Serviços -->
+                            <div class="card">
+                                <div class="card-block little-profile text-center">
 
-
-
-
-
-                                
-                                {{-- <span class="m-b-0">Avaliação</span>
-
-                                <img src="{{ url('img/star1.png') }}" style="width:27px;" id="s1"></a>
-
-                                <img src="{{ url('img/star1.png') }}" style="width:27px;" id="s2"></a>
-
-                                <img src="{{ url('img/star1.png') }}" style="width:27px;" id="s3"></a>
-
-                                <img src="{{ url('img/star1.png') }}" style="width:27px;" id="s4"></a>
-
-                                <img src="{{ url('img/star.png') }}" style="width:27px;" id="s5"></a>
-
-                                <p class="m-b-0">Observações</p> --}}
-
-
-
-
-                            </div>
-                        </div>
-                        <!-- Serviços -->
-                        <div class="card">
-                            <div class="card-block little-profile text-center">
-
-                                <!-- Nav tabs -->
-                            <ul class="nav nav-tabs profile-tab" role="tablist">
-                                <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#aprovacao" role="tab">Preciso de</a> </li>
-                                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#servicos" role="tab">Trabalhei em</a> </li>
-                                
-                            </ul>
-                            <!-- Tab panes -->
-                            <div class="tab-content">
-                                    <div class="tab-pane active" id="aprovacao" role="tabpanel">
-                                        <div class="card-block">
-                                            <div class="profiletimeline">
-                
-                                                
-                                                <div class="sl-item">
-                                                    <div class="sl-left"> <img src="{{url('./admin/assets/images/users/2.jpg')}}" alt="user" class="img-circle"> </div>
-                                                    <div class="sl-right">
-                                                        <div> <a href="#" class="link">Maria tem interesse em:</a> <span class="link">Instalar Quadro</span>
-                                                            <div class="m-t-20 row">
-                                                                <div class="col-md-3 col-xs-12"><img src="{{url('./admin/assets/images/big/img1.jpg')}}" alt="user" class="img-responsive radius"></div>
-                                                                <div class="col-md-9 col-xs-12">
-                                                                    <p> João, está aguardando sua aprovação para o serviço que você anunciou. Verifique o perfil do João atentamente e decida a aprovaçao o mais breve possível  </p> <a href="#" class="btn btn-warning" style="margin-right:4px"> Ver perfil</a> <a href="#" class="btn btn-primary" style="margin-right:4px"> Aprovar</a><a href="#" class="btn btn-danger"> Reprovar</a></div>
-                                                            </div>
-                                                        
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                
-                                                <hr>
-                                                <div class="sl-item">
+                                    <!-- Nav tabs -->
+                                <ul class="nav nav-tabs profile-tab" role="tablist">
+                                    <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#aprovacao" role="tab">Preciso de</a> </li>
+                                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#servicos" role="tab">Trabalhei em</a> </li>
+                                    
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                        <div class="tab-pane active" id="aprovacao" role="tabpanel">
+                                            <div class="card-block">
+                                                <div class="profiletimeline">
+                    
+                                                    
+                                                    <div class="sl-item">
                                                         <div class="sl-left"> <img src="{{url('./admin/assets/images/users/2.jpg')}}" alt="user" class="img-circle"> </div>
                                                         <div class="sl-right">
-                                                            <div> <a href="#" class="link">Maria tem interesse em:</a> <span class="link">Instalar Quadro</span>
-                                                                <div class="m-t-20 row">
-                                                                    <div class="col-md-3 col-xs-12"><img src="{{url('./admin/assets/images/big/img1.jpg')}}" alt="user" class="img-responsive radius"></div>
-                                                                    <div class="col-md-9 col-xs-12">
-                                                                        <p> João, está aguardando sua aprovação para o serviço que você anunciou. Verifique o perfil do João atentamente e decida a aprovaçao o mais breve possível  </p> <a href="#" class="btn btn-warning" style="margin-right:4px"> Ver perfil</a> <a href="/p/3" class="btn btn-primary" style="margin-right:4px"> Aprovar</a><a href="#" class="btn btn-danger"> Reprovar</a></div>
-                                                                </div>
                                                             
-                                                            </div>
                                                         </div>
                                                     </div>
-                                                <hr>
-                                                <div class="sl-item">
-                                                    <div class="sl-left"> <img src="{{url('./admin/assets/images/users/2.jpg')}}" alt="user" class="img-circle"> </div>
-                                                    <div class="sl-right">
-                                                        <div> <a href="#" class="link">Maria tem interesse em:</a> <span class="link">Instalar Quadro</span>
-                                                            <div class="m-t-20 row">
-                                                                <div class="col-md-3 col-xs-12"><img src="{{url('./admin/assets/images/big/img1.jpg')}}" alt="user" class="img-responsive radius"></div>
-                                                                <div class="col-md-9 col-xs-12">
-                                                                    <p> João, está aguardando sua aprovação para o serviço que você anunciou. Verifique o perfil do João atentamente e decida a aprovaçao o mais breve possível  </p> <a href="#" class="btn btn-warning" style="margin-right:4px"> Ver perfil</a> <a href="#" class="btn btn-primary" style="margin-right:4px"> Aprovar</a><a href="#" class="btn btn-danger"> Reprovar</a></div>
-                                                            </div>
-                                                        
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--second tab-->
-                                    <div class="tab-pane" id="servicos" role="tabpanel">
-                                        <div class="card-block">
-                                        
-                                            
-                                                    <div class="sl-item">
                                                     
-                                                        <div class="sl-right">
-                                                            <div> <a href="#" class="link">Maria tem interesse em:</a> <span class="link">Instalar Quadro</span>
-                                                                <div class="m-t-20 row">
-                                                                    <div class="col-md-3 col-xs-12"><img src="{{url('./admin/assets/images/big/img1.jpg')}}" alt="user" class="img-responsive radius"></div>
-                                                                    <div class="col-md-9 col-xs-12">
-                                                                        <p> João, está aguardando sua aprovação para o serviço que você anunciou. Verifique o perfil do João atentamente e decida a aprovaçao o mais breve possível  </p> <a href="#" class="btn btn-primary" style="margin-right:4px"> Aprovado</a> <a href="#" class="btn btn-warning" style="margin-right:4px"> Ver anúncio</a>
-                                                                </div>
-                                                            
-                                                            </div>
-                                                        </div>
-                                                    </div>
                                                     <hr>
                                                     <div class="sl-item">
-                                                        
+                                                            <div class="sl-left"> <img src="{{url('./admin/assets/images/users/2.jpg')}}" alt="user" class="img-circle"> </div>
                                                             <div class="sl-right">
                                                                 <div> <a href="#" class="link">Maria tem interesse em:</a> <span class="link">Instalar Quadro</span>
                                                                     <div class="m-t-20 row">
                                                                         <div class="col-md-3 col-xs-12"><img src="{{url('./admin/assets/images/big/img1.jpg')}}" alt="user" class="img-responsive radius"></div>
                                                                         <div class="col-md-9 col-xs-12">
-                                                                            <p> João, está aguardando sua aprovação para o serviço que você anunciou. Verifique o perfil do João atentamente e decida a aprovaçao o mais breve possível  </p><a href="#" class="btn btn-danger"> Reprovado</a></div>
+                                                                            <p> João, está aguardando sua aprovação para o serviço que você anunciou. Verifique o perfil do João atentamente e decida a aprovaçao o mais breve possível  </p> <a href="#" class="btn btn-warning" style="margin-right:4px"> Ver perfil</a> <a href="/p/3" class="btn btn-primary" style="margin-right:4px"> Aprovar</a><a href="#" class="btn btn-danger"> Reprovar</a></div>
                                                                     </div>
                                                                 
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     <hr>
-                                            
-                                    
-                                            
-                                            <h4 class="font-medium m-t-30">Meus progressos</h4>
-                                            <hr>
-                                            <h5 class="m-t-30">Aprovados <span class="pull-right">80%</span></h5>
-                                            <div class="progress">
-                                                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%; height:6px;"> <span class="sr-only">50% Complete</span> </div>
+                                                    <div class="sl-item">
+                                                        <div class="sl-left"> <img src="{{url('./admin/assets/images/users/2.jpg')}}" alt="user" class="img-circle"> </div>
+                                                        <div class="sl-right">
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <h5 class="m-t-30">Reprovados <span class="pull-right">15%</span></h5>
-                                            <div class="progress">
-                                                <div class="progress-bar bg-info" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%; height:6px;"> <span class="sr-only">50% Complete</span> </div>
-                                            </div>
-                                
                                         </div>
-                                    </div>
+                                        <!--second tab-->
+                                        <div class="tab-pane" id="servicos" role="tabpanel">
+                                            <div class="card-block">
+                                            
+                                                
+                                                        <div class="sl-item">
+                                                        
+                                                            <div class="sl-right">
+                                                                <div> <a href="#" class="link">Maria tem interesse em:</a> <span class="link">Instalar Quadro</span>
+                                                                    <div class="m-t-20 row">
+                                                                        <div class="col-md-3 col-xs-12"><img src="{{url('./admin/assets/images/big/img1.jpg')}}" alt="user" class="img-responsive radius"></div>
+                                                                        <div class="col-md-9 col-xs-12">
+                                                                            <p> João, está aguardando sua aprovação para o serviço que você anunciou. Verifique o perfil do João atentamente e decida a aprovaçao o mais breve possível  </p> <a href="#" class="btn btn-primary" style="margin-right:4px"> Aprovado</a> <a href="#" class="btn btn-warning" style="margin-right:4px"> Ver anúncio</a>
+                                                                    </div>
+                                                                
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <hr>
+                                                        <div class="sl-item">
+                                                            
+                                                                <div class="sl-right">
+                                                                    <div> <a href="#" class="link">Maria tem interesse em:</a> <span class="link">Instalar Quadro</span>
+                                                                        <div class="m-t-20 row">
+                                                                            <div class="col-md-3 col-xs-12"><img src="{{url('./admin/assets/images/big/img1.jpg')}}" alt="user" class="img-responsive radius"></div>
+                                                                            <div class="col-md-9 col-xs-12">
+                                                                                <p> João, está aguardando sua aprovação para o serviço que você anunciou. Verifique o perfil do João atentamente e decida a aprovaçao o mais breve possível  </p><a href="#" class="btn btn-danger"> Reprovado</a></div>
+                                                                        </div>
+                                                                    
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        <hr>
+                                                
                                     
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
                                 </div>
                             </div>
                         </div>
-
-                            </div>
-                        </div>
-                    </div>
+                </div>
+                
+            
             </div>
-               
-           
-        </div>
-                <footer class="footer text-center" style= "left:0"> © 2019 Pig Time - Projeto Integrador | Digital House </footer>
+                    <footer class="footer text-center" style= "left:0"> © 2019 Pig Time - Projeto Integrador | Digital House </footer>
       
     </div>
   
