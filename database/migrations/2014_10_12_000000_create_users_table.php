@@ -28,6 +28,7 @@ class CreateUsersTable extends Migration
             $table->string('bairro')->nullable();
             $table->string('cidade')->nullable();
             $table->string('uf')->nullable();
+            $table->decimal('saldo', 4, 1)->default(5);
             $table->string('telefone_1')->nullable();
             $table->string('telefone_2')->nullable();
             $table->string('url_img')->nullable();
