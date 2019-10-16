@@ -126,7 +126,7 @@
                         <div class="card">
                             <img class="card-img-top" src="{{url('./admin/assets/images/background/profile-bg.jpg')}}" alt="Card image cap">
                             <div class="card-block little-profile text-center">
-                                <div class="pro-img"><img src="{{url('./admin/assets/images/users/4.jpg')}}" alt="user" /></div>
+                                <div class="pro-img"><img src="{{url('./storage/app/storage/')}}/{{Auth::user()->url_img}}" alt="user" /></div>
                                 <h3 class="m-b-0">{{Auth::user()->nome}}</h3>
                                 <h4 class="m-b-0">{{Auth::user()->sobrenome}}</h4>
                             
