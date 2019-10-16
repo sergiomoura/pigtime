@@ -29,6 +29,7 @@ class CreateServicosTable extends Migration
             $table->string('id_dono');
             $table->string('status');
             $table->string('avaliacao')->nullable();
+            $table->string('id_prestador')->nullable();
         });
     }
 
