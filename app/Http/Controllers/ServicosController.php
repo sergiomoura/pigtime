@@ -127,7 +127,9 @@ class ServicosController extends Controller
         Servico::where('id',$id)->delete();
 
         // Redirecionar para a lista de produtos
-        return back();
+        return redirect(
+            'user/servicos'
+        );
     }
 
     // MOSTRAR FORMULÁRIO CRIAÇÃO DE SERVICO
