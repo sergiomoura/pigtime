@@ -63,7 +63,7 @@
                                         {{-- HORARIO --}}
                                         <h1 class="font-light text-info m-b-0">{{ $s->horaInicial->format('H:i') }}<small>h</small></h1>
                                         {{-- PAGAMENTO --}}
-                                        <small>Pagamento {{ $s->horaFinal->diffInHours($s->horaInicial)}} h</small>
+                                        <small>Pagamento {{ ($s->horaFinal->diffInMinutes($s->horaInicial, true))/60}} h</small>
                                 </div>
                             </div>
                         </div>
