@@ -6,7 +6,7 @@
                 <h3 class="text-themecolor">Edite seu anúncio!</h3>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                    <li class="breadcrumb-item"><a href="{{ url('/servicos') }}">Serviços</a></li>
+                    <li class="breadcrumb-item"><a href="{{ url('user/servicos') }}">Meus Serviços</a></li>
                     <li class="breadcrumb-item active">Editar Anúncio</li>
                 </ol>
             </div>
@@ -19,7 +19,7 @@
         <div class="col-lg-15">
             <div class="card">
                 <div class="card-body">
-                    <form class="form p-t-20" action="/servicos" method="post">
+                    <form class="form p-t-20" action="/servicos/{{ $servico->id }}" method="post">
                         {{-- METODO PARA MANDAR AO SERVIDOR --}}
                         @csrf
                         @method('put')
@@ -67,7 +67,7 @@
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="fa fa-search"></i></div>
                                 </div>
-                                <input type="text" class="form-control" id="CEP" maxlength="9" value="{{ $servico->CEP }}" />
+                                <input type="text" class="form-control" name="CEP" id="CEP" maxlength="9" value="{{ $servico->CEP }}" />
                                 </div>
                             </div>
                             {{-- ENDERECO SERVICO --}}
