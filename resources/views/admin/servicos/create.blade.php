@@ -66,7 +66,7 @@
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="fa fa-search"></i></div>
                                 </div>
-                                <input type="text" class="form-control" id="CEP" maxlength="9" />
+                                <input type="text" class="form-control" name="CEP" id="CEP" maxlength="9" />
                                 </div>
                             </div>
                             {{-- ENDERECO SERVICO --}}
@@ -118,16 +118,17 @@
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="fa fa-home"></i></div>
                                 </div>
-                                <input type="text" class="form-control" id="bairro" readonly />
+                                <input name="bairro" type="text" class="form-control" id="bairro" readonly />
                             </div>
                         </div>
+                        {{-- CIDADE --}}
                         <div class="col-4">
-                            <label for="UF">UF</label>
+                            <label for="UF">Cidade</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="fa fa-map-signs"></i></div>
                                 </div>
-                                <input type="text" class="form-control" id="UF" readonly />
+                                <input name="cidade" type="text" class="form-control" id="cidade" readonly />
                             </div>
                         </div>
                         <div class="form-group row">
@@ -188,7 +189,7 @@
                     
                         <div class="form-group">
                             <button type="submit" name="anunciar" class="btn btn-success waves-effect waves-light m-r-10">Anunciar</button>
-                            <button type="submit" name="cancelar" class="btn btn-inverse waves-effect waves-light">Cancelar</button>
+                            <button type="create" name="cancelar" class="btn btn-inverse waves-effect waves-light">Cancelar</button>
                         </div>
                     </form>
                 </div>

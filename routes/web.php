@@ -47,10 +47,11 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 // Definindo as rotas para o CRUD de produtos
-Route::get             ('/servicos',           'servicosController@index'  )->middleware('auth'); // <--- LISTAR OS SERVICOS CADASTRADOS
-Route::get             ('/servicos/create',    'servicosController@create' ); // <--- MOSTRAR UM FORMULÁRIO PARA CRIAR UM NOVO SERVICO
-Route::get             ('/servicos/{id}/edit', 'servicosController@edit'   ); // <--- MOSTRAR UM FORMULÁRIO PARA ALTERAR UM NOVO SERVICO
-Route::get             ('/servicos/{id}',      'servicosController@show'   ); // <--- MOSTRAR UM ÚNICO SERVICO COM SEUS DETALHES E OPÇÕES - VERMAIS
-Route::post            ('/servicos',           'servicosController@store'  ); // <--- CRIAR UM SERVICO (REDIRECIONAR PARA A LISTA...)
-Route::put             ('/servicos/{id}',      'servicosController@update' ); // <--- ALTERAR UM SERVICO (REDIRECIONA PARA A LISTA...)
-Route::delete  ('/servicos/{id}',              'servicosController@destroy'); // <--- REMOVE UM SERVICO (REDIRECIONA PARA A LISTA...)
+Route::get    ('/servicos',                   'ServicosController@index'  )->middleware('auth'); // <--- LISTAR OS SERVICOS CADASTRADOS
+Route::get    ('/servicos/create',    'ServicosController@create'         ); // <--- MOSTRAR UM FORMULÁRIO PARA CRIAR UM NOVO SERVICO
+Route::get    ('/servicos/{id}/edit', 'ServicosController@edit'           ); // <--- MOSTRAR UM FORMULÁRIO PARA ALTERAR UM NOVO SERVICO
+Route::get    ('/servicos/{id}',              'ServicosController@show'   ); // <--- MOSTRAR UM ÚNICO SERVICO COM SEUS DETALHES E OPÇÕES - VERMAIS
+Route::post   ('/servicos',                   'ServicosController@store'  ); // <--- CRIAR UM SERVICO (REDIRECIONAR PARA A LISTA...)
+Route::put    ('/servicos/{id}',              'ServicosController@update' ); // <--- ALTERAR UM SERVICO (REDIRECIONA PARA A LISTA...)
+Route::delete ('/servicos/{id}',              'ServicosController@destroy'); // <--- REMOVE UM SERVICO (REDIRECIONA PARA A LISTA...)
+Route::get    ('/user/servicos', 'ServicosController@userindex'           ); // <-- MOSTRA OS SERVICOS ASSOCIADOS AO USUARIO

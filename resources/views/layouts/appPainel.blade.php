@@ -52,7 +52,7 @@
                 <!-- Logo -->
                 <!-- ============================================================== -->
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="{{ url('/servicos') }}">
                         <!-- Logo icon --><b>
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             
@@ -91,7 +91,7 @@
                         <!-- Profile -->
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ url('admin/assets/images/users/1.jpg')}}" alt="user" class="profile-pic m-r-10" />{{--Auth::user()->nome--}}</a>
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ url('admin/assets/images/users/1.jpg')}}" alt="user" class="profile-pic m-r-10" />{{Auth::user()->nome}}</a>
                         </li>
                     </ul>
                 </div>
@@ -106,17 +106,17 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li> <a class="waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Meus Ganhos</span></a>
+                        <li> <a class="waves-effect waves-dark" href="{{ url('user/servicos') }}" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Meus Serviços</span></a>
                         </li>
-                        <li> <a class="waves-effect waves-dark" href="perfil.html" aria-expanded="false"><i class="mdi mdi-account-check"></i><span class="hide-menu">Perfil</span></a>
+                        <li> <a class="waves-effect waves-dark" href="{{ url('perfil') }}" aria-expanded="false"><i class="mdi mdi-account-check"></i><span class="hide-menu">Perfil</span></a>
                         </li>
-                        <li> <a class="waves-effect waves-dark" href="servicos.html" aria-expanded="false"><i class="mdi mdi-emoticon"></i><span class="hide-menu">Serviços</span></a>
+                        <li> <a class="waves-effect waves-dark" href="{{ url('servicos') }}" aria-expanded="false"><i class="mdi mdi-emoticon"></i><span class="hide-menu">Serviços</span></a>
                         </li>
-                        <li> <a class="waves-effect waves-dark" href="inbox.html" aria-expanded="false"><i class="mdi mdi-table"></i><span class="hide-menu">Mensagem</span></a>
+                        <li> <a class="waves-effect waves-dark" href="{{ url('inbox') }}" aria-expanded="false"><i class="mdi mdi-table"></i><span class="hide-menu">Mensagem</span></a>
                         </li>
                     </ul>
                     <div class="text-center m-t-30">
-                        <a href="anuncios.html" class="btn waves-effect waves-light btn-warning hidden-md-down"> Ganhar Tempo</a>
+                        <a href="{{ url('/servicos') }}" class="btn waves-effect waves-light btn-warning hidden-md-down"> Ganhar Tempo</a>
                     </div>
                 </nav>
                 <!-- End Sidebar navigation -->
@@ -143,20 +143,12 @@
                 <!-- ============================================================== -->
                 <!-- Bread crumb and right sidebar toggle -->
                 <!-- ============================================================== -->
-                <div class="row page-titles">
-                    <div class="col-md-5 col-8 align-self-center">
-                        <h3 class="text-themecolor">Escolha um serviço e ganhe tempo!</h3>
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                            <li class="breadcrumb-item active">Serviços</li>
-                        </ol>
-                    </div>
-                    <div class="col-md-7 col-4 align-self-center">
-                        <a href="#" class="btn waves-effect waves-light btn-danger pull-right hidden-sm-down"> Anunciar serviço</a>
-                    </div>
-                </div>
+                @yield('breadcrumb')
                 <!-- ============================================================== -->
                 <!-- End Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- PAGE CONTENT -->
                 <!-- ============================================================== -->
                 @yield('content')
             </div>

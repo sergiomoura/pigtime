@@ -6,7 +6,8 @@
                 <h3 class="text-themecolor">Escolha um serviço e ganhe tempo!</h3>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                    <li class="breadcrumb-item active">Serviços</li>
+                    <li class="breadcrumb-item">Serviços</li>
+                    <li class="breadcrumb-item active">Meus Serviços</li>
                 </ol>
             </div>
         <div class="col-md-7 col-4 align-self-center">
@@ -46,22 +47,14 @@
                     </div>
                     {{-- DESCRICAO DETALHADA --}}
                     <p class="card-text">{{ Str::limit($s->descricao, $limit=60, $end = '...')}}</p>
-                    {{-- DATA / HORARIO / DISTANCIA / --}}
+                    {{-- HORARIO / DISTANCIA / PAGAMENTO --}}
                     <div class="row">
-                        {{-- CAMPO DATA --}}
-                        <div class="col-4 b-r text-center">
-                            <h1 class="font-light text-info m-b-0 m-r-10">
-                                <small>{{ $s->horaInicial->format('d/m') }}</small>
-                            </h1>
-                            <small>Data</small>
-                        </div>
-                        {{-- CAMPO HORAS --}}
-                        <div class="col-4 b-r align-self-center">
+                        <div class="col-8 b-r align-self-center">
                             <div class="d-flex">
                                 <div class="display-6 text-info"><i class="far fa-clock"></i></div>
-                                    <div class="m-l-0">
+                                    <div class="m-l-20">
                                         {{-- HORARIO --}}
-                                        <h1 class="font-light text-info m-b-0">{{ $s->horaInicial->format('H:i') }}<small>h</small></h1>
+                                        <h1 class="font-light text-info m-b-0">{{ $s->horaInicial->format('H:i') }}<sup>h</sup></h1>
                                         {{-- PAGAMENTO --}}
                                         <small>Pagamento {{ $s->horaFinal->diffInHours($s->horaInicial)}} h</small>
                                 </div>
@@ -69,7 +62,7 @@
                         </div>
                         {{-- DISTANCIA --}}
                         <div class="col-4 text-center">
-                            <h1 class="font-light text-info m-b-0">13<small>km</small></h1>
+                            <h1 class="font-light m-b-0">13<sup>KM</sup></h1>
                             <small>Distância</small>
                         </div>
                     </div>
