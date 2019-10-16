@@ -16,7 +16,7 @@
 
 @section('content')
     <div class="row">
-        <div class="w-sm-100 col-lg-12">
+        <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
                     <form class="form p-t-20" action="/servicos" method="post">
@@ -159,14 +159,14 @@
                         <div class="form-group row">
                             {{-- DATA --}}
                             <div class="col-sm-6">
-                                <label for="data">DATA:</label>
+                                <label for="data">Data</label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon1">
                                             <i class="ti-email"></i>
                                         </span>
                                     </div>
-                                    <input type="date" class="form-control @error('data') is-invalid @enderror " id="data" name="data" placeholder="Horário de início:" required>
+                                    <input type="date" value="{{ Carbon\Carbon::now()->format('Y-m-d') }}" min="{{ Carbon\Carbon::now()->format('Y-m-d') }}" class="form-control @error('data') is-invalid @enderror " id="data" name="data" placeholder="Horário de início:" required>
                                     @error('data')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -186,7 +186,7 @@
                                             <i class="ti-email"></i>
                                         </span>
                                     </div>
-                                    <input type="time"  class="form-control @error('horaInicial') is-invalid @enderror " id="horaInicial" name="horaInicial" placeholder="Horário de início:" required>
+                                    <input type="time" min="{{ Carbon\Carbon::now()->locale('pt_BR')->format('H:i') }}"  class="form-control @error('horaInicial') is-invalid @enderror " id="horaInicial" name="horaInicial" placeholder="Horário de início:" required>
                                     @error('horaInicial')
                                         <div class="invalid-feedback">
                                             {{ $message }}
