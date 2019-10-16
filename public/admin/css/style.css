@@ -6611,10 +6611,11 @@ File: scss
     margin-left: 60px; }
   .mini-sidebar .footer {
     left: 60px; }
-  .flex-wrap {
+  /* .flex-wrap {
     -ms-flex-wrap: nowrap !important;
     flex-wrap: nowrap !important;
-    -webkit-flex-wrap: nowrap !important; } }
+    -webkit-flex-wrap: nowrap !important; } } */
+  }
 
 /*-- ============================================================== 
  Phone and below ipad(767px) 
