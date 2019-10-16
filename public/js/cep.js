@@ -7,7 +7,7 @@ const cidadeInput = document.querySelector('#cidade')
 
 // Funções
 const buscaCep = (evento) => {
-    const cepDigitado = evento.target.value;
+    const cepDigitado = evento.target.value.replace("-","");
 
     if (cepDigitado.length != 8) {
         // saindo da função com return vazio

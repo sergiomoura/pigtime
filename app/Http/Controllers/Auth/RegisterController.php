@@ -82,7 +82,7 @@ class RegisterController extends Controller
         $user->telefone_2 = $data->telefone_2;
         if (!empty($data['img'])) {
             $nomeArquivo = time() . '.' . $data['img']->extension();
-            $data['img']->storeAs('\uploads\storage', $nomeArquivo);
+            $data['img']->storeAs('\storage', $nomeArquivo);
             $user->url_img = $nomeArquivo;
         }
             

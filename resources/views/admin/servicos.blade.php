@@ -6,7 +6,7 @@
                 <h3 class="text-themecolor">Escolha um serviço e ganhe tempo!</h3>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                    <li class="breadcrumb-item active">Serviços</li>
+                    <li class="breadcrumb-item active">Servicos</li>
                 </ol>
             </div>
         <div class="col-md-7 col-4 align-self-center">

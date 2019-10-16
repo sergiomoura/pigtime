@@ -99,15 +99,20 @@ class ServicosController extends Controller
         // Alterar os valores do produto
         $servico->nome = request('nome');
         $servico->descricao = request('descricao');
-        $s->endereco = request('endereco'). ' '. request('numero'). ' ' . request('complemento');
-        $s->horaInicial = request('data').' '.request('horaInicial').':00';
-        $s->horaFinal = request('data').' '.request('horaFinal').':00';
+        $servico->CEP = request('CEP');
+        $servico->endereco = request('endereco');
+        $servico->numero = request('numero');
+        $servico->complemento = request('complemento');
+        $servico->bairro = request('bairro');
+        $servico->cidade = request('cidade');
+        $servico->horaInicial = request('data').' '.request('horaInicial').':00';
+        $servico->horaFinal = request('data').' '.request('horaFinal').':00';
 
         // Salvar as alterações no banco de dados
         $servico->save();
 
         // Redirecionar para a lista de produtos
-        return redirect('/servicos');
+        return redirect('/servicos/'.$servico->id);
     }   
 
     // DELETAR UM SERVICO
