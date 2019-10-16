@@ -109,7 +109,7 @@
                                                         <i class="ti-lock"></i>
                                                     </span>
                                                 </div>
-                                                <input type="password" class="form-control" id="senha" name="password" placeholder="Senha">
+                                                    <input type="password" class="form-control" id="senha" name="password" placeholder="Senha">
                                             </div>
                                         </div>
                                         <div class="col-sm-6">

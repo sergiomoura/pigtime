@@ -45,7 +45,7 @@
                         <h5 class="my-0 py-0 m-l-10 card-title align-self-center">{{ $s->dono . ' ' . $s->donoSobrenome }} </h5>
                     </div>
                     {{-- DESCRICAO DETALHADA --}}
-                    <p class="card-text">{{ Str::limit($s->descricao, $limit=60, $end = '...')}}</p>
+                    <p class="card-text" style="min-height:48px;">{{ Str::limit($s->descricao, $limit=60, $end = '...')}}</p>
                     {{-- DATA / HORARIO / DISTANCIA / --}}
                     <div class="row">
                         {{-- CAMPO DATA --}}
@@ -56,7 +56,7 @@
                             <small>Data</small>
                         </div>
                         {{-- CAMPO HORAS --}}
-                        <div class="col-4 b-r align-self-center">
+                        <div class="col-4 b-r px-0 d-flex flex-column align-items-center">
                             <div class="d-flex">
                                 <div class="display-6 text-info"><i class="far fa-clock"></i></div>
                                     <div class="m-l-0">
