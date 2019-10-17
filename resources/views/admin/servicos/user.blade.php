@@ -149,10 +149,10 @@
                                             <div class="m-l-0">
                                                 {{-- HORARIO --}}
                                                 <h1 class="font-light text-info m-b-0">
-                                                    {{ $c->horaInicial->format('H:i') }}<small>h</small></h1>
+                                                    {{ $a->horaInicial->format('H:i') }}<small>h</small></h1>
                                                 {{-- PAGAMENTO --}}
                                                 <small>Pagamento
-                                                    {{ ($c->horaFinal->diffInMinutes($c->horaInicial, true))/60}}
+                                                    {{ ($a->horaFinal->diffInMinutes($a->horaInicial, true))/60}}
                                                     h</small>
                                             </div>
                                         </div>
@@ -164,7 +164,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="/servicos/{{ $c->id }}" class="btn btn-primary">Visualizar</a>
+                            <a href="/servicos/{{ $a->id }}" class="btn btn-primary">Visualizar</a>
                         </div>
                     </div>
                     @endforeach
