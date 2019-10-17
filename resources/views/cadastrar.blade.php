@@ -23,17 +23,20 @@
                             @csrf
                             <div class="form-group row">
                                 <div class="col-sm-6">
+                                <label for="nome" class="label">*Nome:</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="basic-addon1">
                                                 <i class="ti-user"></i>
                                             </span>
                                         </div>
+                                        
                                         <input type="text" class="form-control" id="nameInput" name="nome" placeholder="* Nome" value="{{old('nome')}}">
                                     </div>
                                 </div>
 
                                 <div class="col-sm-6">
+                                <label for="sobrenome" class="label">*Sobrenome:</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="basic-addon1">
@@ -47,6 +50,7 @@
 
                             <div class="form-group row">
                                 <div class="col-sm-4">
+                                <label for="rg" class="label">RG:</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="basic-addon1">
@@ -58,6 +62,7 @@
                                 </div>
 
                                 <div class="col-sm-4">
+                                <label for="cpf" class="label">CPF:</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="basic-addon1">
@@ -69,12 +74,14 @@
                                 </div>
 
                                 <div class="col-sm-4">
+                                    <label for="sexo" class="label">Sexo:</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="basic-addon1">
                                                     <i class="ti-user"></i>
                                                 </span>
                                         </div>
+                                        
                                         <select name="sexo" id="sexo" class="form-control">
                                             <option value="sexo" selected disabled hidden>Sexo</option>
                                             <option value="m">Masculino</option>
@@ -87,6 +94,7 @@
 
                             <div class="form-group row">
                                 <div class="col-sm-6">
+                                <label for="email" class="label">*E-mail:</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="basic-addon1">
@@ -97,6 +105,7 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
+                                <label for="emailConf" class="label">*Confirmar E-mail:</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="basic-addon1">
@@ -110,6 +119,7 @@
 
                             <div class="form-group row">
                                 <div class="col-sm-6">
+                                <label for="password" class="label">*Senha:</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="basic-addon1">
@@ -120,6 +130,7 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
+                                <label for="passwordConf" class="label">*Confirmar senha:</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="basic-addon1">
@@ -133,6 +144,7 @@
 
                             <div class="form-group row">
                                 <div class="col-sm-6">
+                                <label for="endereco" class="label">Endereço:</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="basic-addon1">
@@ -144,6 +156,7 @@
                                 </div>
                                 <div class="col-sm-2">
                                     <div class="input-group">
+                                    <label for="numero" class="label">Número:</label>
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="basic-addon1">
                                                 <i class="ti-home"></i>
@@ -153,6 +166,7 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
+                                <label for="complemento" class="label">Complemento:</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="basic-addon1">
@@ -166,6 +180,7 @@
 
                             <div class="form-group row">
                                 <div class="col-sm-5">
+                                <label for="bairro" class="label">Bairro:</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="basic-addon1">
@@ -176,6 +191,7 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-5">
+                                <label for="cidade" class="label">Cidade:</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="basic-addon1">
@@ -186,6 +202,7 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-2">
+                                <label for="uf" class="label">UF:</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="basic-addon1">
@@ -199,6 +216,7 @@
 
                             <div class="form-group row">
                                 <div class="col-sm-4">
+                                <label for="telefone_2" class="label">Telefone 1:</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="basic-addon1">
@@ -209,6 +227,7 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
+                                <label for="telefone_2" class="label">Telefone 2:</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="basic-addon1">
@@ -219,6 +238,7 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
+                                <label for="cep" class="label">CEP:</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="basic-addon1">
