@@ -155,8 +155,8 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-2">
-                                    <div class="input-group">
                                     <label for="numero" class="label">Número:</label>
+                                    <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="basic-addon1">
                                                 <i class="ti-home"></i>
