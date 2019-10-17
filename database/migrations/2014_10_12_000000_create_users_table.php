@@ -16,7 +16,7 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nome');
-            $table->string('sobrenome')->nullable();
+            $table->string('sobrenome');
             $table->string('rg')->nullable();
             $table->string('cpf')->nullable();
             $table->enum('sexo', ['m','f','o'])->nullable();
@@ -28,6 +28,7 @@ class CreateUsersTable extends Migration
             $table->string('bairro')->nullable();
             $table->string('cidade')->nullable();
             $table->string('uf')->nullable();
+            $table->string('cep')->nullable();
             $table->decimal('saldo', 4, 1)->default(5);
             $table->string('telefone_1')->nullable();
             $table->string('telefone_2')->nullable();

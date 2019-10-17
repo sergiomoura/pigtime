@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'nome', 'email', 'password','sobrenome','rg','cpf','sexo','endereco','numero','complemento','bairro','cidade','uf','saldo','telefone_1','telefone_2','url_img'
+        'nome', 'email', 'password','sobrenome','rg','cpf','sexo','endereco','numero','complemento','bairro','cidade','uf','cep','saldo','telefone_1','telefone_2','url_img'
     ];
 
     /**
@@ -35,5 +35,23 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+    ];
+
+    public $rules = [
+        'nome' => 'required | min:1 | max:20',
+        'sobrenome' => 'required | min:1 | max:50',
+        'rg' => 'nullable | numeric | min:8 | max:11',
+        'cpf' => 'nullable | numeric | min:9 | max:11',
+        'email' => 'required | email',
+        'endereco' => 'nullable | string | max:30',
+        'numero' => 'nullable | numeric | max:8',
+        'complemento' => 'nullable | max:30',
+        'bairro' => 'nullable | max:30',
+        'cidade' => 'nullable | string | max:30',
+        'uf' => 'nullable | string | min:2 | max:2',
+        'cep' => 'nullable | max:8',
+        'telefone_1' => 'nullable | numeric | max:11',
+        'telefone_2' => 'nullable | numeric | max:11',
+        'url_img' => 'nullable | image'
     ];
 }

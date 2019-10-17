@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
+    private $user;
     /*
     |--------------------------------------------------------------------------
     | Register Controller
@@ -36,8 +37,9 @@ class RegisterController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(User $user)
     {
+        $this->user = $user;
         $this->middleware('guest');
     }
 
@@ -64,6 +66,8 @@ class RegisterController extends Controller
      */
     protected function create(Request $data)
     {
+        $this->validate($data, $this->user->rules);
+
         $user = new User;
         $user->nome = $data->nome;
         $user->sobrenome = $data->sobrenome;
@@ -78,6 +82,7 @@ class RegisterController extends Controller
         $user->bairro = $data->bairro;
         $user->cidade = $data->cidade;
         $user->uf = $data->uf;
+        $user->cep = $data->cep;
         $user->telefone_1 = $data->telefone_1;
         $user->telefone_2 = $data->telefone_2;
         if (!empty($data['img'])) {

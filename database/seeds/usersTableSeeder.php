@@ -28,6 +28,7 @@ class usersTableSeeder extends Seeder
         $u->bairro = 'Sao Sebastiao';
         $u->cidade = 'Picos';
         $u->uf = 'PI';
+        $u->cep = '04087032';
         $u->telefone_1 = '1138150932';
         $u->telefone_2 = '1138150940';
 
@@ -48,6 +49,7 @@ class usersTableSeeder extends Seeder
         $u->bairro = 'Novo Oriente';
         $u->cidade = 'Maracanaú';
         $u->uf = 'CE';
+        $u->cep = '04087032';
         $u->telefone_1 = '1126109283';
         $u->telefone_2 = '85984228992';
 
