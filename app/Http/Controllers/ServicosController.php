@@ -19,6 +19,7 @@ class ServicosController extends Controller
             $user = User::find($servico->id_dono);
             $servico->dono = $user->nome;
             $servico->donoSobrenome = $user->sobrenome;
+            $servico->url_img = $user->url_img;
         }
         // Carregar os serviços em linha do tempo infitina ?
 
@@ -41,6 +42,7 @@ class ServicosController extends Controller
             $user = User::find($servico->id_dono);
             $servico->dono = $user->nome;
             $servico->donoSobrenome = $user->sobrenome;
+            $servico->url_img = $user->url_img;
         }
 
         foreach ($candidaturas as $candidatura) {
