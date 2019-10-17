@@ -68,10 +68,6 @@
                 </div>
             {{-- FINAL DATA / HORARIO / DISTANCIA --}}
             </div>
-            {{-- BOTÃO EDITAR --}}
-            @if (Auth::user()->id == $servico->id_dono)
-            <a class="w-100 m-t-10 btn btn-md btn-primary align-self-end" href="/servicos/{{ $servico->id }}/edit">Editar</a>
-            @endif
             {{-- BOTÃO CANDIDATAR-SE --}}
             @if (Auth::user()->id == $servico->id_dono)
                 <a class="w-100 m-t-10 btn btn-md btn-primary align-self-end" href="/servicos/{{ $servico->id }}/edit">Editar</a>
