@@ -91,7 +91,7 @@
                         <!-- Profile -->
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ url('admin/assets/images/users/1.jpg')}}" alt="user" class="profile-pic m-r-10" />{{Auth::user()->nome}}</a>
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ url(Auth::user()->url_img) }}" alt="user" class="profile-pic m-r-10" />{{Auth::user()->nome}}</a>
                         </li>
                     </ul>
                 </div>

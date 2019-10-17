@@ -25,7 +25,7 @@
             <div class="card">
                 <img class="card-img-top" src="{{url('./admin/assets/images/background/profile-bg.jpg')}}" alt="Card image cap">
                 <div class="card-block little-profile text-center">
-                    <div class="pro-img"><img src="{{url('./storage/app/storage/')}}/{{Auth::user()->url_img}}" alt="user" /></div>
+                    <div class="pro-img"><img src="{{url(Auth::user()->url_img) }}" alt="user" /></div>
                     <h3 class="m-b-0">{{Auth::user()->nome}}</h3>
                     <h4 class="m-b-0">{{Auth::user()->sobrenome}}</h4>
                 
@@ -101,7 +101,7 @@
                                                 <div class="m-t-20 row">
                                                     <div class="col-md-3 col-xs-12"><img src="{{url('./admin/assets/images/big/img1.jpg')}}" alt="user" class="img-responsive radius"></div>
                                                     <div class="col-md-9 col-xs-12">
-                                                        <p> João, está aguardando sua aprovação para o serviço que você anunciou. Verifique o perfil do João atentamente e decida a aprovaçao o mais breve possível  </p> <a href="#" class="btn btn-warning" style="margin-right:4px"> Ver perfil</a> <a href="#" class="btn btn-primary" style="margin-right:4px"> Aprovar</a><a href="#" class="btn btn-danger"> Reprovar</a></div>
+                                                        <p> João, está aguardando sua aprovação para o serviço que você anunciou. Verifique o perfil do João atentamente e decida a aprovaçao o mais breve possível  </p> <a href="/p/{id}" class="btn btn-warning" style="margin-right:4px"> Ver perfil</a> <a href="#" class="btn btn-primary" style="margin-right:4px"> Aprovar</a><a href="#" class="btn btn-danger"> Reprovar</a></div>
                                                 </div>
                                             
                                             </div>

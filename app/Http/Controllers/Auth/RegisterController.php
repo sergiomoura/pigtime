@@ -85,10 +85,12 @@ class RegisterController extends Controller
         $user->cep = $data->cep;
         $user->telefone_1 = $data->telefone_1;
         $user->telefone_2 = $data->telefone_2;
-        if (!empty($data['img'])) {
-            $nomeArquivo = time() . '.' . $data['img']->extension();
-            $data['img']->storeAs('\storage', $nomeArquivo);
-            $user->url_img = $nomeArquivo;
+
+        if ($files = $data->file('img')) {
+            $destinationPath = 'admin/assets/images/users/'; // upload path
+            $profilefile = time() . "." . $files->getClientOriginalExtension();
+            $files->move($destinationPath, $profilefile);
+            $user->url_img = $destinationPath.$profilefile;
         }
             
         $user->save();

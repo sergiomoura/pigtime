@@ -19,6 +19,7 @@ class ServicosController extends Controller
             $user = User::find($servico->id_dono);
             $servico->dono = $user->nome;
             $servico->donoSobrenome = $user->sobrenome;
+            $servico->url_img = $user->url_img;
         }
         // Carregar os serviços em linha do tempo infitina ?
 
@@ -41,13 +42,14 @@ class ServicosController extends Controller
             $user = User::find($servico->id_dono);
             $servico->dono = $user->nome;
             $servico->donoSobrenome = $user->sobrenome;
+            $servico->url_img = $user->url_img;
         }
 
         foreach ($candidaturas as $candidatura) {
             $user = User::find($candidatura->id_dono);
             $candidatura->dono = $user->nome;
             $candidatura->donoSobrenome = $user->sobrenome;
-            $candidatura->foto = $user->url_img;
+            $candidatura->url_img = $user->url_img;
         }
 
         // Retornar a view com os serviços
@@ -189,6 +191,23 @@ class ServicosController extends Controller
         return redirect(
             '/user/servicos'
         );
+
+    }
+
+    // CANDIDATAR UM USUÁRIO A UM SERVICO
+    public function candidatar($id_servico){
+        
+        // Levantando o id do usuário candidato
+        $id_usuario = User::find(request('id_user'));
+
+        // Levantando o servico
+        $servico = Servico::find($id_servico);
+
+        // Adicionando o usuário como candidato ao serviço
+        $servico->candidatos()->attach($id_usuario);
+
+        // Redirecionando para tela de servicos
+        return redirect('/servicos');
 
     }
 }

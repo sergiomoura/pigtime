@@ -61,9 +61,11 @@
                                 </button>
 
                                
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Cadastrar') }}
-                                </button>
+                                
+                                    <a class="btn btn-primary" href="/cadastrar">
+                                        {{ __('Cadastrar') }}
+                                    </a>
+                                
 
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">

@@ -32,7 +32,7 @@
                     {{-- FOTO E NOME DO USUARIO --}}
                     <div class="row d-flex m-b-20">
                         {{-- FOTO DO USUARIO --}}
-                        <img src="http://localhost:8000/admin/assets/images/users/1.jpg" alt="user" class="m-l-20" style="width: 50px; border-radius: 100%;">
+                        <img src="{{ url($user->url_img) }}" alt="user" class="m-l-20" style="width: 50px; border-radius: 100%;">
                         {{-- NOME DO USUARIO --}}
                         <h5 class="my-0 py-0 m-l-10 card-title align-self-center">{{ $user->nome . ' ' . $user->sobrenome }} </h5>
                     </div>
@@ -74,7 +74,13 @@
             @endif
             {{-- BOTÃO CANDIDATAR-SE --}}
             @if (Auth::user()->id != $servico->id_dono)
-            <a class="w-100 m-t-10 btn btn-md btn-primary align-self-end" href="/servicos/{{ $servico->id }}/edit">Candidatar</a>
+                <form method="POST" action="/servicos/{{ $servico->id }}/candidatar">
+                    @csrf
+                    <input type="hidden" name="id_user" value="{{ Auth::user()->id }}">
+                    <button type="submit" class="w-100 m-t-10 btn btn-md btn-primary align-self-end">Candidatar-se</button>
+                </form>
+            @else
+                <a class="w-100 m-t-10 btn btn-md btn-primary align-self-end" href="/servicos/{{ $servico->id }}/edit">Editar</a>
             @endif
             {{-- FINAL DO CARD --}}
             </div>
@@ -85,7 +91,7 @@
             <div class="card h-100">
                 <img class="card-img-top" src="{{url('./admin/assets/images/background/profile-bg.jpg')}}" alt="Card image cap">
                 <div class="card-block little-profile text-center">
-                    <div class="pro-img"><img src="{{url('./admin/assets/images/users/4.jpg')}}" alt="user" /></div>
+                    <div class="pro-img"><img src="{{ url($user->url_img) }}" alt="user" /></div>
                     <h3 class="m-b-0">{{ $user->nome . ' ' . $user->sobrenome }}</h3>
                     <p>Web Designer &amp; Developer</p>
                     <a href="javascript:void(0)" class="m-t-10 waves-effect waves-dark btn btn-primary btn-md btn-rounded">Follow</a>
