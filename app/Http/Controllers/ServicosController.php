@@ -210,4 +210,26 @@ class ServicosController extends Controller
         return redirect('/servicos');
 
     }
+
+    // APROVAR UM USUÁRIO A UM SERVICO
+    public function aprovar($id_servico){
+
+        // Levantando o id do usuario candidato
+        $id_usuario = User::find(request('id_user'));
+
+        // Levantando o serviço
+        $servico = Servico::find($id_serviço);
+
+        // Alterar o falor id_prestador
+        $servico->id_prestador = $id_usuario;
+
+        // Limpar a tabela candidaturas
+
+        // Salvar a alteração no banco de dados
+        $servico->save();
+
+        // Redirecionando para a tela servicos
+        return redirect('/servicos');
+        
+    }
 }

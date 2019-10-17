@@ -28,7 +28,7 @@ class servicosTableSeeder extends Seeder
         $s->status = 'Active';
         $s->avaliacao = 'teste';
         $s->pagamento = "1";
-        $s->id_prestador = '1';
+        $s->id_prestador = '';
 
         $s->save();
 
@@ -48,7 +48,7 @@ class servicosTableSeeder extends Seeder
         $s->status = 'Active';
         $s->avaliacao = 'teste';
         $s->pagamento = "1";
-        $s->id_prestador = '1';
+        $s->id_prestador = '';
 
         $s->save();
 
@@ -68,7 +68,7 @@ class servicosTableSeeder extends Seeder
         $s->status = 'Active';
         $s->avaliacao = 'teste';
         $s->pagamento = "1";
-        $s->id_prestador = '1';
+        $s->id_prestador = '';
 
         $s->save();
 
