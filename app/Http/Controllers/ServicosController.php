@@ -191,4 +191,19 @@ class ServicosController extends Controller
         );
 
     }
+
+    // CANDIDATAR UM USUÁRIO A UM SERVICO
+    public function candidatar($id_servico){
+        
+        // Levantando o usuário candidato
+        $user = User::find(request('id_user'));
+
+        // Levantando o servico
+        $servico = Servico::find($id_servico);
+
+        dd($user->candidaturas);
+
+
+
+    }
 }

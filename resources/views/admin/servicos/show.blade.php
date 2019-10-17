@@ -74,7 +74,13 @@
             @endif
             {{-- BOTÃO CANDIDATAR-SE --}}
             @if (Auth::user()->id != $servico->id_dono)
-            <a class="w-100 m-t-10 btn btn-md btn-primary align-self-end" href="/servicos/{{ $servico->id }}/edit">Candidatar</a>
+                <form method="POST" action="/servicos/{{ $servico->id }}/candidatar">
+                    @csrf
+                    <input type="hidden" name="id_user" value="{{ Auth::user()->id }}">
+                    <button type="submit" class="w-100 m-t-10 btn btn-md btn-primary align-self-end">Candidatar-se</button>
+                </form>
+            @else
+                <a class="w-100 m-t-10 btn btn-md btn-primary align-self-end" href="/servicos/{{ $servico->id }}/edit">Editar</a>
             @endif
             {{-- FINAL DO CARD --}}
             </div>
