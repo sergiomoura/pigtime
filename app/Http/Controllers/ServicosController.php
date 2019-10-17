@@ -49,7 +49,7 @@ class ServicosController extends Controller
             $user = User::find($candidatura->id_dono);
             $candidatura->dono = $user->nome;
             $candidatura->donoSobrenome = $user->sobrenome;
-            $candidatura->foto = $user->url_img;
+            $candidatura->url_img = $user->url_img;
         }
 
         // Retornar a view com os serviços
