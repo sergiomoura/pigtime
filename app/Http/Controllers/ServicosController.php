@@ -45,7 +45,6 @@ class ServicosController extends Controller
 
         foreach ($candidaturas as $candidatura) {
             $user = User::find($candidatura->id_dono);
-            $user = User::find($servico->id_dono);
             $candidatura->dono = $user->nome;
             $candidatura->donoSobrenome = $user->sobrenome;
             $candidatura->foto = $user->url_img;
