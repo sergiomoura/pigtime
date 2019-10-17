@@ -35,6 +35,7 @@ class ServicosController extends Controller
 
         // Carregar os serviços do banco de dados
         $servicos = Servico::where('id_dono','=',auth()->user()->id)->get();
+        $candidaturas = Servico::where('id_prestador','=',auth()->user()->id)->get();
 
         foreach ($servicos as $servico) {
             $user = User::find($servico->id_dono);
@@ -42,10 +43,17 @@ class ServicosController extends Controller
             $servico->donoSobrenome = $user->sobrenome;
         }
 
+        foreach ($candidaturas as $candidatura) {
+            $user = User::find($servico->id_dono);
+            $candidatura->dono = $user->nome;
+            $candidatura->donoSobrenome = $user->sobrenome;
+            $candidatura->foto = $user->url_img;
+        }
+
         // Retornar a view com os serviços
         return view(
             'admin.servicos.user',
-            compact('servicos')
+            compact('servicos','candidaturas')
         );
     }
 
