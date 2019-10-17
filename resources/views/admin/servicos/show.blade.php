@@ -93,9 +93,9 @@
                     <img class="rounded-top" src="{{ url('admin/assets/images/background/previsao-do-tempo.jpg') }}" alt="Card image cap">
                     <div class="card-img-overlay" style="height:110px;">
                     {{-- TITULO --}}
-                    <h3 class="card-title text-white m-b-0 dl">{{ $s->nome }}</h3>
+                    <h3 class="card-title text-white m-b-0 dl">{{ $candidato->nome }}</h3>
                     {{-- DESCRICAO  --}}
-                    <small class="card-text text-white font-light"><br>{{ Str::limit($s->descricao, $limit =45, $end = '...') }}</small>
+                    <small class="card-text text-white font-light"><br>{{ Str::limit($candidato->descricao, $limit =45, $end = '...') }}</small>
                     </div>
                         <div class="row d-flex m-b-10">
                             {{-- FOTO DO USUARIO --}}
