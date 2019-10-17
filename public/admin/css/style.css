@@ -6375,6 +6375,12 @@ File: scss
     .contact-box .contact-widget > a .user-img {
       margin-bottom: 0px !important; }
 
+      .card-banner{
+        background-position: center;
+        background-size: cover;
+        min-height: 250px;
+      }
+
 /*
 Template Name: Material Pro Admin
 Author: Themedesigner
