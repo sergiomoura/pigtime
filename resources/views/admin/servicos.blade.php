@@ -40,7 +40,7 @@
                 <div class="card-body weather-small">
                     <div class="row d-flex m-b-10">
                         {{-- FOTO DO USUARIO --}}
-                        <img src="{{ $s->url_img }}" alt="user" class="m-l-20" style="width: 50px; border-radius: 100%;">
+                        <img src="{{ url($s->url_img) }}" alt="user" class="m-l-20" style="width: 50px; border-radius: 100%;">
                         {{-- NOME DO USUARIO --}}
                         <h5 class="my-0 py-0 m-l-10 card-title align-self-center">{{ $s->dono . ' ' . $s->donoSobrenome }} </h5>
                     </div>
