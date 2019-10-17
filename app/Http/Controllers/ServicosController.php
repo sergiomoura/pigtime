@@ -115,6 +115,7 @@ class ServicosController extends Controller
         $servico->cidade = request('cidade');
         $servico->horaInicial = request('data').' '.request('horaInicial').':00';
         $servico->horaFinal = request('data').' '.request('horaFinal').':00';
+        $servico->pagamento = ($s->horaFinal->diffInMinutes($s->horaInicial, true))/60;
 
         // Salvar as alterações no banco de dados
         $servico->save();
@@ -180,6 +181,7 @@ class ServicosController extends Controller
         $s->cidade = request('cidade');
         $s->horaInicial = request('data').' '.request('horaInicial').':00';
         $s->horaFinal = request('data').' '.request('horaFinal').':00';
+        $s->pagamento = ($s->horaFinal->diffInMinutes($s->horaInicial, true))/60;
         $s->id_dono = request('id_dono');
         // Salvar o produto
         $s->save();

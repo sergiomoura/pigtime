@@ -186,7 +186,7 @@
                                             <i class="ti-email"></i>
                                         </span>
                                     </div>
-                                    <input type="time" min="{{ Carbon\Carbon::now()->locale('pt_BR')->format('H:i') }}"  class="form-control @error('horaInicial') is-invalid @enderror " id="horaInicial" name="horaInicial" placeholder="Horário de início:" required>
+                                    <input type="time" min="{{ Carbon\Carbon::now()->locale('pt_BR')->format('Y-m-d H:i') }}"  class="form-control @error('horaInicial') is-invalid @enderror " id="horaInicial" name="horaInicial" placeholder="Horário de início:" required>
                                     @error('horaInicial')
                                         <div class="invalid-feedback">
                                             {{ $message }}

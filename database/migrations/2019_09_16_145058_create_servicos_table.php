@@ -28,6 +28,7 @@ class CreateServicosTable extends Migration
             $table->dateTime('horaFinal');
             $table->string('id_dono');
             $table->string('status');
+            $table->string('pagamento');
             $table->string('avaliacao')->nullable();
             $table->string('id_prestador')->nullable();
         });

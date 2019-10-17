@@ -27,6 +27,8 @@ class servicosTableSeeder extends Seeder
         $s->id_dono = '2';
         $s->status = 'Active';
         $s->avaliacao = 'teste';
+        $s->pagamento = "1";
+        $s->id_prestador = '1';
 
         $s->save();
 
@@ -45,6 +47,8 @@ class servicosTableSeeder extends Seeder
         $s->id_dono = '2';
         $s->status = 'Active';
         $s->avaliacao = 'teste';
+        $s->pagamento = "1";
+        $s->id_prestador = '1';
 
         $s->save();
 
@@ -63,6 +67,8 @@ class servicosTableSeeder extends Seeder
         $s->id_dono = '2';
         $s->status = 'Active';
         $s->avaliacao = 'teste';
+        $s->pagamento = "1";
+        $s->id_prestador = '1';
 
         $s->save();
 
@@ -81,6 +87,8 @@ class servicosTableSeeder extends Seeder
         $s->id_dono = '1';
         $s->status = 'Active';
         $s->avaliacao = 'teste';
+        $s->pagamento = "1";
+        $s->id_prestador = '2';
 
         $s->save();
 
@@ -99,6 +107,8 @@ class servicosTableSeeder extends Seeder
         $s->id_dono = '1';
         $s->status = 'Active';
         $s->avaliacao = 'teste';
+        $s->pagamento = "1";
+        $s->id_prestador = '2';
 
         $s->save();
 
@@ -117,6 +127,8 @@ class servicosTableSeeder extends Seeder
         $s->id_dono = '1';
         $s->status = 'Active';
         $s->avaliacao = 'teste';
+        $s->pagamento = "1";
+        $s->id_prestador = '2';
 
         $s->save();
     }
