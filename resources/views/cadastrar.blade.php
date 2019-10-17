@@ -29,7 +29,7 @@
                                                 <i class="ti-user"></i>
                                             </span>
                                         </div>
-                                        <input type="text" class="form-control" id="nameInput" name="nome" placeholder="* Nome">
+                                        <input type="text" class="form-control" id="nameInput" name="nome" placeholder="* Nome" value="{{old('nome')}}">
                                     </div>
                                 </div>
 
@@ -40,7 +40,7 @@
                                                 <i class="ti-user"></i>
                                             </span>
                                         </div>
-                                        <input type="text" class="form-control" id="sobrenome" name="sobrenome" placeholder="* Sobrenome">
+                                        <input type="text" class="form-control" id="sobrenome" name="sobrenome" placeholder="* Sobrenome" value="{{old('sobrenome')}}">
                                     </div>
                                 </div>
                             </div>
@@ -53,7 +53,7 @@
                                                     <i class="ti-user"></i>
                                                 </span>
                                         </div>
-                                        <input type="text" class="form-control" id="rg" name="rg" placeholder="RG">
+                                        <input type="text" class="form-control" id="rg" name="rg" placeholder="RG" value="{{old('rg')}}">
                                     </div>
                                 </div>
 
@@ -64,7 +64,7 @@
                                                     <i class="ti-user"></i>
                                                 </span>
                                         </div>
-                                        <input type="text" class="form-control" id="cpf" name="cpf" placeholder="CPF">
+                                        <input type="text" class="form-control" id="cpf" name="cpf" placeholder="CPF" value="{{old('cpf')}}">
                                     </div>
                                 </div>
 
@@ -93,7 +93,7 @@
                                                 <i class="ti-email"></i>
                                             </span>
                                         </div>
-                                        <input type="email" class="form-control" id="email" name="email" placeholder="* E-mail">
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="* E-mail" value="{{old('email')}}">
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
@@ -139,7 +139,7 @@
                                                 <i class="ti-home"></i>
                                             </span>
                                         </div>
-                                        <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Av, Rua...">
+                                        <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Av, Rua..." value="{{old('endereco')}}">
                                     </div>
                                 </div>
                                 <div class="col-sm-2">
@@ -149,7 +149,7 @@
                                                 <i class="ti-home"></i>
                                             </span>
                                         </div>
-                                        <input type="text" class="form-control" id="numero" name="numero" placeholder="N°">
+                                        <input type="text" class="form-control" id="numero" name="numero" placeholder="N°" value="{{old('numero')}}">
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
@@ -159,7 +159,7 @@
                                                 <i class="ti-home"></i>
                                             </span>
                                         </div>
-                                        <input type="text" class="form-control" id="complemento" name="complemento" placeholder="Ap, BL, Cj...">
+                                        <input type="text" class="form-control" id="complemento" name="complemento" placeholder="Ap, BL, Cj..." value="{{old('complemento')}}">
                                     </div>
                                 </div>
                             </div>
@@ -172,7 +172,7 @@
                                                 <i class="ti-home"></i>
                                             </span>
                                         </div>
-                                        <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Bairro">
+                                        <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Bairro" value="{{old('bairro')}}">
                                     </div>
                                 </div>
                                 <div class="col-sm-5">
@@ -182,7 +182,7 @@
                                                 <i class="ti-home"></i>
                                             </span>
                                         </div>
-                                        <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Cidade">
+                                        <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Cidade" value="{{old('cidade')}}">
                                     </div>
                                 </div>
                                 <div class="col-sm-2">
@@ -192,7 +192,7 @@
                                                 <i class="ti-home"></i>
                                             </span>
                                         </div>
-                                        <input type="text" class="form-control" id="uf" name="uf" placeholder="UF">
+                                        <input type="text" class="form-control" id="uf" name="uf" placeholder="UF" value="{{old('uf')}}">
                                     </div>
                                 </div>
                             </div>
@@ -205,7 +205,7 @@
                                                 <i class="ti-mobile"></i>
                                             </span>
                                         </div>
-                                        <input type="text" class="form-control" id="telefone_1" name="telefone_1" placeholder="Telefone 1">
+                                        <input type="text" class="form-control" id="telefone_1" name="telefone_1" placeholder="Telefone 1" value="{{old('telefone_1')}}">
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
@@ -215,7 +215,7 @@
                                                 <i class="ti-mobile"></i>
                                             </span>
                                         </div>
-                                        <input type="text" class="form-control" id="telefone_2" name="telefone_2" placeholder="Telefone 2">
+                                        <input type="text" class="form-control" id="telefone_2" name="telefone_2" placeholder="Telefone 2" value="{{old('telefone_2')}}">
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
@@ -225,7 +225,7 @@
                                                 <i class="ti-mobile"></i>
                                             </span>
                                         </div>
-                                        <input type="text" class="form-control" id="cep" name="cep" placeholder="CEP">
+                                        <input type="text" class="form-control" id="cep" name="cep" placeholder="CEP" value="{{old('cep')}}">
                                     </div>
                                 </div>
                             </div>
