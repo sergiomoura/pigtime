@@ -210,14 +210,13 @@
                                         </div>
                                     @enderror
                                 </div>
+                                {{-- INPUT ID_USUARIO --}}
+                                    <input type="hidden" name="id_dono" id="id_dono" value="{{ Auth::user()->id }}">
+                                <div class="form-group-row ml-4">
+                                    <button type="submit" name="anunciar" class="btn mb-2 col-12 btn-success waves-effect waves-light m-r-10">Anunciar</button>
+                                    <button type="create" name="cancelar" class="btn col-12 btn-inverse waves-effect waves-light">Cancelar</button>
+                                </div>
                             </div>
-                        </div>
-                        {{-- INPUT ID_USUARIO --}}
-                            <input type="hidden" name="id_dono" id="id_dono" value="{{ Auth::user()->id }}">
-                    
-                        <div class="form-group-row ml-5">
-                            <button type="submit" name="anunciar" class="btn btn-success waves-effect waves-light m-r-10">Anunciar</button>
-                            <button type="create" name="cancelar" class="btn btn-inverse waves-effect waves-light">Cancelar</button>
                         </div>
                     </form>
                 </div>
