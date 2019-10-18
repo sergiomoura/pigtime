@@ -36,7 +36,7 @@ class ServicosController extends Controller
 
         // Carregar os serviços do banco de dados
         $servicos = Servico::where('id_dono','=',auth()->user()->id)->get();
-        $candidaturas = Servico::where('id_prestador','=',auth()->user()->id)->get();
+        $aprovados = Servico::where('id_prestador','=',auth()->user()->id)->get();
 
         foreach ($servicos as $servico) {
             $user = User::find($servico->id_dono);
@@ -45,17 +45,17 @@ class ServicosController extends Controller
             $servico->url_img = $user->url_img;
         }
 
-        foreach ($candidaturas as $candidatura) {
-            $user = User::find($candidatura->id_dono);
-            $candidatura->dono = $user->nome;
-            $candidatura->donoSobrenome = $user->sobrenome;
-            $candidatura->url_img = $user->url_img;
+        foreach ($aprovados as $aprovado) {
+            $user = User::find($aprovado->id_dono);
+            $aprovado->dono = $user->nome;
+            $aprovado->donoSobrenome = $user->sobrenome;
+            $aprovado->url_img = $user->url_img;
         }
 
         // Retornar a view com os serviços
         return view(
             'admin.servicos.user',
-            compact('servicos','candidaturas')
+            compact('servicos','aprovados')
         );
     }
 
@@ -209,5 +209,27 @@ class ServicosController extends Controller
         // Redirecionando para tela de servicos
         return redirect('/servicos');
 
+    }
+
+    // APROVAR UM USUÁRIO A UM SERVICO
+    public function aprovar($id_servico){
+
+        // Levantando o id do usuario candidato
+        $id_usuario = User::find(request('id_user'));
+
+        // Levantando o serviço
+        $servico = Servico::find($id_serviço);
+
+        // Alterar o falor id_prestador
+        $servico->id_prestador = $id_usuario;
+
+        // Limpar a tabela candidaturas
+
+        // Salvar a alteração no banco de dados
+        $servico->save();
+
+        // Redirecionando para a tela servicos
+        return redirect('/servicos');
+        
     }
 }

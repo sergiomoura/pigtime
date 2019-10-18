@@ -68,19 +68,17 @@
                 </div>
             {{-- FINAL DATA / HORARIO / DISTANCIA --}}
             </div>
-            {{-- BOTÃO EDITAR --}}
-            @if (Auth::user()->id == $servico->id_dono)
-            <a class="w-100 m-t-10 btn btn-md btn-primary align-self-end" href="/servicos/{{ $servico->id }}/edit">Editar</a>
-            @endif
             {{-- BOTÃO CANDIDATAR-SE --}}
-            @if (Auth::user()->id != $servico->id_dono)
+            @if (Auth::user()->id == $servico->id_dono)
+                <a class="w-100 m-t-10 btn btn-md btn-primary align-self-end" href="/servicos/{{ $servico->id }}/edit">Editar</a>
+            @elseif (Auth::user()->id != $servico->id_dono && $servico->candidatos->contains('id',Auth::user()->id))
+                <a href="{{ url('/servicos') }}" class="w-100 m-t-10 btn btn-md btn-primary align-self-end disabled">Candidatura Enviada</a>
+            @elseif (Auth::user()->id != $servico->id_dono)
                 <form method="POST" action="/servicos/{{ $servico->id }}/candidatar">
                     @csrf
                     <input type="hidden" name="id_user" value="{{ Auth::user()->id }}">
                     <button type="submit" class="w-100 m-t-10 btn btn-md btn-primary align-self-end">Candidatar-se</button>
                 </form>
-            @else
-                <a class="w-100 m-t-10 btn btn-md btn-primary align-self-end" href="/servicos/{{ $servico->id }}/edit">Editar</a>
             @endif
             {{-- FINAL DO CARD --}}
             </div>
@@ -89,21 +87,40 @@
         {{-- PERFIL ANUNCIANTE --}}
         <div class="col-4">
             <div class="card h-100">
-                <img class="card-img-top" src="{{url('./admin/assets/images/background/profile-bg.jpg')}}" alt="Card image cap">
-                <div class="card-block little-profile text-center">
-                    <div class="pro-img"><img src="{{ url($user->url_img) }}" alt="user" /></div>
-                    <h3 class="m-b-0">{{ $user->nome . ' ' . $user->sobrenome }}</h3>
-                    <p>Web Designer &amp; Developer</p>
-                    <a href="javascript:void(0)" class="m-t-10 waves-effect waves-dark btn btn-primary btn-md btn-rounded">Follow</a>
-                    <div class="row text-center m-t-20">
-                        <div class="col-lg-4 col-md-4 m-t-20">
-                            <h3 class="m-b-0 font-light">1099</h3><small>Articles</small></div>
-                        <div class="col-lg-4 col-md-4 m-t-20">
-                            <h3 class="m-b-0 font-light">23,469</h3><small>Followers</small></div>
-                        <div class="col-lg-4 col-md-4 m-t-20">
-                            <h3 class="m-b-0 font-light">6035</h3><small>Following</small></div>
+                @if (Auth::user()->id == $servico->id_dono)
+                    @foreach ($servico->candidatos as $candidato)
+                    <!-- HEADER CARD; TÍTULO E DESCRICAO -->
+                    <img class="rounded-top" src="{{ url('admin/assets/images/background/previsao-do-tempo.jpg') }}" alt="Card image cap">
+                    <div class="card-img-overlay" style="height:110px;">
+                    {{-- TITULO --}}
+                    <h3 class="card-title text-white m-b-0 dl">{{ $s->nome }}</h3>
+                    {{-- DESCRICAO  --}}
+                    <small class="card-text text-white font-light"><br>{{ Str::limit($s->descricao, $limit =45, $end = '...') }}</small>
                     </div>
-                </div>
+                        <div class="row d-flex m-b-10">
+                            {{-- FOTO DO USUARIO --}}
+                            <img src="{{ url($candidato->url_img) }}" alt="user" class="m-l-20" style="width: 50px; border-radius: 100%;">
+                            {{-- NOME DO USUARIO --}}
+                            <h5 class="my-0 py-0 m-l-10 card-title align-self-center">{{ $candidato->nome . ' ' . $candidato->sobrenome }} </h5>
+                        </div>
+                    @endforeach
+                @else (Auth::user()->id != $servico->id_dono)
+                    <img class="card-img-top" src="{{url('./admin/assets/images/background/profile-bg.jpg')}}" alt="Card image cap">
+                    <div class="card-block little-profile text-center">
+                        <div class="pro-img"><img src="{{ url($user->url_img) }}" alt="user" /></div>
+                        <h3 class="m-b-0">{{ $user->nome . ' ' . $user->sobrenome }}</h3>
+                        <p>Web Designer &amp; Developer</p>
+                        <a href="javascript:void(0)" class="m-t-10 waves-effect waves-dark btn btn-primary btn-md btn-rounded">Follow</a>
+                        <div class="row text-center m-t-20">
+                            <div class="col-lg-4 col-md-4 m-t-20">
+                                <h3 class="m-b-0 font-light">1099</h3><small>Articles</small></div>
+                            <div class="col-lg-4 col-md-4 m-t-20">
+                                <h3 class="m-b-0 font-light">23,469</h3><small>Followers</small></div>
+                            <div class="col-lg-4 col-md-4 m-t-20">
+                                <h3 class="m-b-0 font-light">6035</h3><small>Following</small></div>
+                        </div>
+                    </div>
+                @endif
             </div>
         </div>
     </div>
