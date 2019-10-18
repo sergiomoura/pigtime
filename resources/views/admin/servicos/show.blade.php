@@ -85,13 +85,14 @@
             </div>
         {{-- FINAL DA COLUNA --}}
         </div>
-        {{-- PERFIL ANUNCIANTE / CANDIDATOS --}}
+        {{-- PERFIL ANUNCIANTE / --}}
         <div class="col-sm-12 col-md-4">
             <div class="card rounded h-100">
-                {{-- CANDIDATOS --}}
+                {{-- CANDIDATOS e FINALIZAR --}}
                 @if (Auth::user()->id == $servico->id_dono)
-                    @if ($servico->id_prestador == null)
-                        @foreach ($servico->candidatos as $candidato)
+                    {{-- LISTA DE CANDIDATOS --}}
+                    @if (is_null($servico->id_prestador))
+                        {{-- LISTA CANDIDATOS --}}
                         <!-- HEADER CARD; TÍTULO E DESCRICAO -->
                         <div class="card d-flex p-3 mb-2 justify-content-center" style="height:110px; background-color:#7460ee;">
                             {{-- TITULO --}}
@@ -99,32 +100,53 @@
                             {{-- DESCRICAO  --}}
                             <small class="text-white font-light"><br>Veja quem mostrou interesse no seu anúncio</small>
                         </div>
+                        @foreach ($servico->candidatos as $servico->prestador)
+                            {{-- CANDIDATOS --}}
+                            <div class="card-body weather-small">
+                                <div class="row d-flex m-b-10">
+                                    {{-- FOTO DO USUARIO --}}
+                                    <a href="{{ url('/user') }}"><img src="{{ url($candidato->url_img) }}" alt="user" class="m-l-20" style="width: 50px; border-radius: 100%;"></a>
+                                    {{-- NOME DO USUARIO --}}
+                                    <h5 class="my-0 py-0 m-l-10 card-title align-self-center"><a href="{{ url('/user') }}" class="link">{{ $candidato->nome . ' ' . $candidato->sobrenome }}</a> </h5>
+                                </div>
+                                <div class="row d-flex m-b-10 m-l-40 justify-content-around">
+                                    {{-- BOTÃO APROVAR --}}
+                                    <form action="/servicos/{{ $servico->id }}/aprovar" method="post">
+                                        @csrf
+                                        @method('put')
+                                        <button type="submit" class="btn btn-primary" style="margin-right:4px"> Aprovar</button>
+                                        <input type="hidden" name="id_prestador" value="{{ $candidato->id }}">
+                                    </form>
+                                    {{-- BOTÃO REPROVAR --}}
+                                    <a href="#" class="btn btn-danger">Reprovar</a></div>
+                                </div>
+                            </div>
+                        @endforeach
+                    {{-- FINALIZAR SERVICO --}}
+                    @else
                         {{-- CANDIDATOS --}}
                         <div class="card-body weather-small">
                             <div class="row d-flex m-b-10">
                                 {{-- FOTO DO USUARIO --}}
-                                <a href="{{ url('/user') }}"><img src="{{ url($candidato->url_img) }}" alt="user" class="m-l-20" style="width: 50px; border-radius: 100%;"></a>
+                                <a href="{{ url('/user') }}"><img src="{{ url($servico->prestador->url_img) }}" alt="user" class="m-l-20" style="width: 50px; border-radius: 100%;"></a>
                                 {{-- NOME DO USUARIO --}}
-                                <h5 class="my-0 py-0 m-l-10 card-title align-self-center"><a href="{{ url('/user') }}" class="link">{{ $candidato->nome . ' ' . $candidato->sobrenome }}</a> </h5>
+                                <h5 class="my-0 py-0 m-l-10 card-title align-self-center"><a href="{{ url('/user') }}" class="link">{{ $servico->prestador->nome . ' ' . $servico->prestador->sobrenome }}</a> </h5>
                             </div>
-                            <div class="row d-flex m-b-10 m-l-40 justify-content-around">
-                                {{-- BOTÃO APROVAR --}}
-                                <form action="/servicos/{{ $servico->id }}/aprovar" method="post">
+                            <div class="row d-flex m-b-10 m-l-40">
+                                {{-- BOTÃO FINALIZAR --}}
+                                <form action="/servicos/{{ $servico->id }}/finalizar" method="post">
                                     @csrf
-                                    @method('put')
-                                    <button type="submit" class="btn btn-primary" style="margin-right:4px"> Aprovar</button>
-                                    <input type="hidden" name="id_prestador" value="{{ $candidato->id }}">
+                                    <button type="submit" class="btn btn-primary col-12" style="margin-right:4px">FINALIZAR</button>
+                                    <input type="hidden" name="id_prestador" value="{{ $servico->prestador->id }}">
+                                    <input type="hidden" name="id_dono" value="{{ $servico->id_dono }}">
+
                                 </form>
-                                {{-- BOTÃO REPROVAR --}}
-                                <a href="#" class="btn btn-danger">Reprovar</a></div>
                             </div>
                         </div>
-                        @endforeach
-                    @else
-                        <h1>hello world</h1>
                     @endif
+                    
                 {{-- PERFIL DONO DO SERVICO --}}
-                @else (Auth::user()->id != $servico->id_dono)
+                @else
                     <img class="card-img-top" src="{{url('./admin/assets/images/background/profile-bg.jpg')}}" alt="Card image cap">
                     <div class="card-block little-profile text-center">
                         <div class="pro-img"><img src="{{ url($user->url_img) }}" alt="user" /></div>

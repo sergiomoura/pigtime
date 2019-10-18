@@ -234,4 +234,27 @@ class ServicosController extends Controller
         return redirect('user/servicos');
         
     }
+
+    // FINALIZAR UM SERVICO
+    public function finalizar($id){
+
+        // caputrando o servico
+        $servico = Servico::find($id);
+
+        // mudando o status do servico
+        $servico->status = 0;
+
+        // transferir o saldo
+        $pagamento = $servico->pagamento;
+        $servico->prestador->saldo+=$pagamento;
+        $servico->user->saldo-=$pagamento;
+
+        // salvando os novos valores
+        $servico->save();
+        $servico->prestador->save();
+        $servico->user->save();
+
+        // redirecionando para a tela servicos
+        return redirect('user/servicos');
+    }
 }
