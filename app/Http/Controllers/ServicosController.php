@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Servico;
 use App\User;
+use Illuminate\Support\Facades\DB;
 
 class ServicosController extends Controller
 {
@@ -12,13 +13,14 @@ class ServicosController extends Controller
     public function index() {
 
         // Carregar os serviços do banco de dados
-        $servicos = Servico::where('id_dono','!=',auth()->user()->id)->get();
+        $servicos = Servico::where('id_dono','!=',auth()->user()->id)->whereNull('id_prestador')->where('status','=','1')->get();
         // var_dump($servicos->user());
         // exit;
         foreach ($servicos as $servico) {
             $user = User::find($servico->id_dono);
             $servico->dono = $user->nome;
             $servico->donoSobrenome = $user->sobrenome;
+            $servico->url_img = $user->url_img;
         }
         // Carregar os serviços em linha do tempo infitina ?
 
@@ -35,25 +37,26 @@ class ServicosController extends Controller
 
         // Carregar os serviços do banco de dados
         $servicos = Servico::where('id_dono','=',auth()->user()->id)->get();
-        $candidaturas = Servico::where('id_prestador','=',auth()->user()->id)->get();
+        $aprovados = Servico::where('id_prestador','=',auth()->user()->id)->get();
 
         foreach ($servicos as $servico) {
             $user = User::find($servico->id_dono);
             $servico->dono = $user->nome;
             $servico->donoSobrenome = $user->sobrenome;
+            $servico->url_img = $user->url_img;
         }
 
-        foreach ($candidaturas as $candidatura) {
-            $user = User::find($candidatura->id_dono);
-            $candidatura->dono = $user->nome;
-            $candidatura->donoSobrenome = $user->sobrenome;
-            $candidatura->foto = $user->url_img;
+        foreach ($aprovados as $aprovado) {
+            $user = User::find($aprovado->id_dono);
+            $aprovado->dono = $user->nome;
+            $aprovado->donoSobrenome = $user->sobrenome;
+            $aprovado->url_img = $user->url_img;
         }
 
         // Retornar a view com os serviços
         return view(
             'admin.servicos.user',
-            compact('servicos','candidaturas')
+            compact('servicos','aprovados')
         );
     }
 
@@ -190,5 +193,68 @@ class ServicosController extends Controller
             '/user/servicos'
         );
 
+    }
+
+    // CANDIDATAR UM USUÁRIO A UM SERVICO
+    public function candidatar($id_servico){
+        
+        // Levantando o id do usuário candidato
+        $id_usuario = User::find(request('id_user'));
+
+        // Levantando o servico
+        $servico = Servico::find($id_servico);
+
+        // Adicionando o usuário como candidato ao serviço
+        $servico->candidatos()->attach($id_usuario);
+
+        // Redirecionando para tela de servicos
+        return redirect('/servicos');
+
+    }
+
+    // APROVAR UM USUÁRIO A UM SERVICO
+    public function aprovar($id){
+
+        // Levantando o id do usuario aprovado
+        $id_prestador = request('id_prestador');
+
+        // Levantando o serviço
+        $servico = Servico::find($id);
+
+        // Alterar o falor id_prestador
+        $servico->id_prestador = $id_prestador;
+
+        // Limpar a tabela candidaturas
+        DB::table('candidaturas')->where('servico_id','=',$id)->delete();
+
+        // Salvar a alteração no banco de dados
+        $servico->save();
+
+        // Redirecionando para a tela servicos
+        return redirect('user/servicos');
+        
+    }
+
+    // FINALIZAR UM SERVICO
+    public function finalizar($id){
+
+        // caputrando o servico
+        $servico = Servico::find($id);
+
+        // mudando o status do servico
+        $servico->status = 0;
+
+        // transferir o saldo
+        $pagamento = $servico->pagamento;
+        $servico->prestador->saldo+=$pagamento;
+        $servico->user->saldo-=$pagamento;
+
+        // salvando os novos valores
+        $servico->save();
+        $servico->prestador->save();
+        $servico->user->save();
+
+        // redirecionando para a tela servicos
+        return redirect('user/servicos');
     }
 }

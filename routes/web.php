@@ -22,7 +22,7 @@ Route::get('/cadastrar', function(){
 });
 
 Route::get('/login', function() {
-	return view('login');
+	return view('admin.perfil');
 });
 
 Route::get('/perfil', function(){
@@ -55,7 +55,9 @@ Route::post   ('/servicos',                   'ServicosController@store'  ); // 
 Route::put    ('/servicos/{id}',              'ServicosController@update' ); // <--- ALTERAR UM SERVICO (REDIRECIONA PARA A LISTA...)
 Route::delete ('/servicos/{id}',              'ServicosController@destroy'); // <--- REMOVE UM SERVICO (REDIRECIONA PARA A LISTA...)
 Route::get    ('/user/servicos', 'ServicosController@userindex'           ); // <-- MOSTRA OS SERVICOS ASSOCIADOS AO USUARIO
-
+Route::post   ('/servicos/{id}/candidatar','ServicosController@candidatar'); // <-- CANDIDATAR UM USUÁRIO À UM SERVIÇO
+Route::put   ('/servicos/{id}/aprovar','ServicosController@aprovar'); // <-- CANDIDATAR UM USUÁRIO À UM SERVIÇO
+Route::post   ('/servicos/{id}/finalizar','ServicosController@finalizar'); // <-- FINALIZAR UM SERVICO
 
 Route::get('/p/{id}', function($id){
     return view("admin.pessoa");

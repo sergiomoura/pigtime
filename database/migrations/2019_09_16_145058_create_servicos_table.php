@@ -26,11 +26,15 @@ class CreateServicosTable extends Migration
             $table->string('cidade');
             $table->dateTime('horaInicial');
             $table->dateTime('horaFinal');
-            $table->string('id_dono');
-            $table->string('status');
-            $table->string('pagamento');
+            $table->bigInteger('id_dono')->unsigned();
+            $table->boolean('status')->defalut(1);
+            $table->decimal('pagamento',3,2);
             $table->string('avaliacao')->nullable();
             $table->string('id_prestador')->nullable();
+
+            $table->foreign('id_dono')->references('id')->on('users')
+            ->onDelete('cascade')->onUpdate('cascade');   
+
         });
     }
 

@@ -32,7 +32,7 @@ class CreateUsersTable extends Migration
             $table->decimal('saldo', 4, 1)->default(5);
             $table->string('telefone_1')->nullable();
             $table->string('telefone_2')->nullable();
-            $table->string('url_img')->nullable();
+            $table->string('url_img')->nullable()->default('admin/assets/images/default.png');
             $table->rememberToken();
             $table->timestamps();
         });

@@ -54,4 +54,13 @@ class User extends Authenticatable
         'telefone_2' => 'nullable | numeric | max:11',
         'url_img' => 'nullable | image'
     ];
+
+    public function candidaturas(){
+        return $this->belongsToMany('App\Servico', 'candidaturas', 'user_id', 'servico_id');
+    }
+
+    public function servicos(){
+        return $this->hasMany('App\Servico','id_dono','id');
+    }
+
 }

@@ -1965,6 +1965,7 @@ File: scss
       background: rgba(0, 0, 0, 0.05); }
   .topbar .profile-pic {
     width: 30px;
+    height: 30px;
     border-radius: 100%; }
   .topbar .dropdown-menu {
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
@@ -6374,6 +6375,12 @@ File: scss
     padding: 15px 10px; }
     .contact-box .contact-widget > a .user-img {
       margin-bottom: 0px !important; }
+
+      .card-banner{
+        background-position: center;
+        background-size: cover;
+        min-height: 250px;
+      }
 
 /*
 Template Name: Material Pro Admin

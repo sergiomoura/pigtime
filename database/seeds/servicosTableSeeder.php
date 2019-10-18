@@ -14,7 +14,7 @@ class servicosTableSeeder extends Seeder
     {
         $s = new Servico();
         
-        $s->nome = 'Passear com cachorro Grande';
+        $s->nome = '1';
         $s->descricao = 'Tenho um labrador de 50kg ele ama correr e morder o dono';
         $s->CEP = '01307-000';
         $s->endereco = 'Rua Frei Caneca';
@@ -24,17 +24,17 @@ class servicosTableSeeder extends Seeder
         $s->complemento = 'Ap 64';
         $s->horaInicial = '2019-10-09 11:20:00';
         $s->horaFinal = '2019-10-09 12:20:00';
-        $s->id_dono = '2';
-        $s->status = 'Active';
+        $s->id_dono = 2;
+        $s->status = 1;
         $s->avaliacao = 'teste';
         $s->pagamento = "1";
-        $s->id_prestador = '1';
+        $s->id_prestador = null;
 
         $s->save();
 
         $s = new Servico();
         
-        $s->nome = 'Passear com cachorro Grande';
+        $s->nome = '2';
         $s->descricao = 'Tenho um labrador';
         $s->CEP = '01307-000';
         $s->endereco = 'Rua Frei Caneca';
@@ -44,17 +44,17 @@ class servicosTableSeeder extends Seeder
         $s->complemento = 'Ap 64';
         $s->horaInicial = '2019-10-09 11:20:00';
         $s->horaFinal = '2019-10-09 12:20:00';
-        $s->id_dono = '2';
-        $s->status = 'Active';
+        $s->id_dono = 2;
+        $s->status = 1;
         $s->avaliacao = 'teste';
         $s->pagamento = "1";
-        $s->id_prestador = '1';
+        $s->id_prestador = null;
 
         $s->save();
 
         $s = new Servico();
         
-        $s->nome = 'Passear com cachorro Grande';
+        $s->nome = '3';
         $s->descricao = 'Tenho um labrador de 50kg ele ama correr e morder o dono ASUDKAHKWDUHASKUDHAKSUDHAKSUDHAIWUDHASKJDHKAUWDKSUHDKAWUDHKASUHDSKAUh';
         $s->CEP = '01307-000';
         $s->endereco = 'Rua Frei Caneca';
@@ -64,17 +64,17 @@ class servicosTableSeeder extends Seeder
         $s->complemento = 'Ap 64';
         $s->horaInicial = '2019-10-09 11:20:00';
         $s->horaFinal = '2019-10-09 12:20:00';
-        $s->id_dono = '2';
-        $s->status = 'Active';
+        $s->id_dono = 2;
+        $s->status = 1;
         $s->avaliacao = 'teste';
         $s->pagamento = "1";
-        $s->id_prestador = '1';
+        $s->id_prestador = null;
 
         $s->save();
 
         $s = new Servico();
         
-        $s->nome = 'Passear com cachorro Grande';
+        $s->nome = '4';
         $s->descricao = 'Tenho um labrador de 50kg ele ama correr e morder o dono';
         $s->CEP = '01307-000';
         $s->endereco = 'Rua Frei Caneca';
@@ -84,17 +84,17 @@ class servicosTableSeeder extends Seeder
         $s->complemento = 'Ap 64';
         $s->horaInicial = '2019-10-09 11:20:00';
         $s->horaFinal = '2019-10-09 12:20:00';
-        $s->id_dono = '1';
-        $s->status = 'Active';
+        $s->id_dono = 1;
+        $s->status = 1;
         $s->avaliacao = 'teste';
         $s->pagamento = "1";
-        $s->id_prestador = '2';
+        $s->id_prestador = null;
 
         $s->save();
 
         $s = new Servico();
         
-        $s->nome = 'Passear com cachorro Grande';
+        $s->nome = '5';
         $s->descricao = 'Tenho um labrador de 50kg ele ama correr e morder o dono UHASDHKASHDKASUhkaushdkasuhdKUSDHKASUHDKASUHDKASUHDKASUHDKASUHDKUASHDKUASH';
         $s->CEP = '01307-000';
         $s->endereco = 'Rua Frei Caneca';
@@ -104,11 +104,11 @@ class servicosTableSeeder extends Seeder
         $s->complemento = 'Ap 64';
         $s->horaInicial = '2019-10-09 11:20:00';
         $s->horaFinal = '2019-10-09 12:20:00';
-        $s->id_dono = '1';
-        $s->status = 'Active';
+        $s->id_dono = 1;
+        $s->status = 1;
         $s->avaliacao = 'teste';
         $s->pagamento = "1";
-        $s->id_prestador = '2';
+        $s->id_prestador = null;
 
         $s->save();
 
@@ -124,11 +124,11 @@ class servicosTableSeeder extends Seeder
         $s->complemento = 'Ap 64';
         $s->horaInicial = '2019-10-09 11:20:00';
         $s->horaFinal = '2019-10-09 12:20:00';
-        $s->id_dono = '1';
-        $s->status = 'Active';
+        $s->id_dono = 1;
+        $s->status = 1;
         $s->avaliacao = 'teste';
         $s->pagamento = "1";
-        $s->id_prestador = '2';
+        $s->id_prestador = null;
 
         $s->save();
     }

@@ -31,6 +31,7 @@ class usersTableSeeder extends Seeder
         $u->cep = '04087032';
         $u->telefone_1 = '1138150932';
         $u->telefone_2 = '1138150940';
+        $u->url_img = 'admin/assets/images/users/4.jpg';
 
         $u->save();
 
@@ -52,6 +53,7 @@ class usersTableSeeder extends Seeder
         $u->cep = '04087032';
         $u->telefone_1 = '1126109283';
         $u->telefone_2 = '85984228992';
+        $u->url_img = 'admin/assets/images/users/2.jpg';
 
         $u->save();
     }
