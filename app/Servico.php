@@ -16,6 +16,10 @@ class Servico extends Model
         return $this->belongsTo('App\User','id_dono','id');
     }
 
+    public function prestador() {
+        return $this->hasOne('App\User','id','id_prestador');
+    }
+
     public function candidatos(){
         return $this->belongsToMany('App\User', 'candidaturas', 'servico_id', 'user_id');
     }
