@@ -212,16 +212,16 @@ class ServicosController extends Controller
     }
 
     // APROVAR UM USUÁRIO A UM SERVICO
-    public function aprovar($id_servico){
+    public function aprovar($id){
 
-        // Levantando o id do usuario candidato
-        $id_usuario = User::find(request('id_user'));
+        // Levantando o id do usuario aprovado
+        $id_prestador = request('id_prestador');
 
         // Levantando o serviço
-        $servico = Servico::find($id_serviço);
+        $servico = Servico::find($id);
 
         // Alterar o falor id_prestador
-        $servico->id_prestador = $id_usuario;
+        $servico->id_prestador = $id_prestador;
 
         // Limpar a tabela candidaturas
 
@@ -229,7 +229,7 @@ class ServicosController extends Controller
         $servico->save();
 
         // Redirecionando para a tela servicos
-        return redirect('/servicos');
+        return redirect('user/servicos');
         
     }
 }
