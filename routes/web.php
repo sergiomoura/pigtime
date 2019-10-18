@@ -56,6 +56,7 @@ Route::put    ('/servicos/{id}',              'ServicosController@update' ); // 
 Route::delete ('/servicos/{id}',              'ServicosController@destroy'); // <--- REMOVE UM SERVICO (REDIRECIONA PARA A LISTA...)
 Route::get    ('/user/servicos', 'ServicosController@userindex'           ); // <-- MOSTRA OS SERVICOS ASSOCIADOS AO USUARIO
 Route::post   ('/servicos/{id}/candidatar','ServicosController@candidatar'); // <-- CANDIDATAR UM USUÁRIO À UM SERVIÇO
+Route::put   ('/servicos/{id}/aprovar','ServicosController@aprovar'); // <-- CANDIDATAR UM USUÁRIO À UM SERVIÇO
 
 Route::get('/p/{id}', function($id){
     return view("admin.pessoa");

@@ -19,7 +19,8 @@
 
 @section('content')
     <div class="row">
-        <div class="col-8">
+        {{-- SERVICO --}}
+        <div class="col-sm-12 col-md-8">
             <div class="card rounded h-100">
                 <!-- HEADER CARD; TÍTULO E DESCRICAO -->
                 <img class="rounded-top" src="{{ url('admin/assets/images/background/previsao-do-tempo.jpg') }}" alt="Card image cap">
@@ -85,25 +86,40 @@
         {{-- FINAL DA COLUNA --}}
         </div>
         {{-- PERFIL ANUNCIANTE --}}
-        <div class="col-4">
-            <div class="card h-100">
+        <div class="col-sm-12 col-md-4">
+            <div class="card rounded h-100">
+                {{-- CANDIDATOS --}}
                 @if (Auth::user()->id == $servico->id_dono)
                     @foreach ($servico->candidatos as $candidato)
                     <!-- HEADER CARD; TÍTULO E DESCRICAO -->
-                    <img class="rounded-top" src="{{ url('admin/assets/images/background/previsao-do-tempo.jpg') }}" alt="Card image cap">
-                    <div class="card-img-overlay" style="height:110px;">
-                    {{-- TITULO --}}
-                    <h3 class="card-title text-white m-b-0 dl">{{ $candidato->nome }}</h3>
-                    {{-- DESCRICAO  --}}
-                    <small class="card-text text-white font-light"><br>{{ Str::limit($candidato->descricao, $limit =45, $end = '...') }}</small>
+                    <div class="card d-flex p-3 mb-2 justify-content-center" style="height:110px; background-color:#7460ee;">
+                        {{-- TITULO --}}
+                        <h3 class="card-title text-white mb-0 dl">CANDIDATOS</h3>
+                        {{-- DESCRICAO  --}}
+                        <small class="text-white font-light"><br>Veja quem mostrou interesse no seu anúncio</small>
                     </div>
+                    {{-- CANDIDATOS --}}
+                    <div class="card-body weather-small">
                         <div class="row d-flex m-b-10">
                             {{-- FOTO DO USUARIO --}}
-                            <img src="{{ url($candidato->url_img) }}" alt="user" class="m-l-20" style="width: 50px; border-radius: 100%;">
+                            <a href="{{ url('/user') }}"><img src="{{ url($candidato->url_img) }}" alt="user" class="m-l-20" style="width: 50px; border-radius: 100%;"></a>
                             {{-- NOME DO USUARIO --}}
-                            <h5 class="my-0 py-0 m-l-10 card-title align-self-center">{{ $candidato->nome . ' ' . $candidato->sobrenome }} </h5>
+                            <h5 class="my-0 py-0 m-l-10 card-title align-self-center"><a href="{{ url('/user') }}" class="link">{{ $candidato->nome . ' ' . $candidato->sobrenome }}</a> </h5>
                         </div>
+                        <div class="row d-flex m-b-10 m-l-40 justify-content-around">
+                            {{-- BOTÃO APROVAR --}}
+                            <form action="/servicos/{{ $servico->id }}/aprovar" method="post">
+                                @csrf
+                                @method('put')
+                                <button type="submit" class="btn btn-primary" style="margin-right:4px"> Aprovar</button>
+                                <input type="hidden" name="id_prestador" value="{{ $candidato->id }}">
+                            </form>
+                            {{-- BOTÃO REPROVAR --}}
+                            <a href="#" class="btn btn-danger">Reprovar</a></div>
+                        </div>
+                    </div>
                     @endforeach
+                {{-- PERFIL DONO DO SERVICO --}}
                 @else (Auth::user()->id != $servico->id_dono)
                     <img class="card-img-top" src="{{url('./admin/assets/images/background/profile-bg.jpg')}}" alt="Card image cap">
                     <div class="card-block little-profile text-center">
