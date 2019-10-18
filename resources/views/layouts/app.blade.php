@@ -73,6 +73,16 @@
         </nav>
 
         <main class="py-4">
+        @if(session()->has('notif'))
+            <div class="row">
+            <div class="alert alert-suscess">
+            <button type='button' class='close'
+            data-dismiss='alert' aria-hidden='true'>&times;<button>
+            <strong>Notificação: </strong> {{session()->get('notif')}}
+            </div>
+            </div>
+        @endif
+
             @yield('content')
         </main>
     </div>

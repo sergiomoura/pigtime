@@ -143,12 +143,8 @@
 
       <!-- About Section Content -->
       <div class="row">
-        <div class="col-lg-4 ml-auto">
-          <p class="lead">Olá!Seja bem vindo ao PigTime, seu banco que ao invés de comercializar moedas, comercializa tempo! Aqui 1h é igual a 1h, independentemente do tipo de serviço ou nível de qualificação do prestador.</p>
-        </div>
-        <div class="col-lg-4 mr-auto">
-          <p class="lead">Você pode ocupar dois lados: aquele que dispõe seu talento para que outras pessoas te “contratem” e de contratante de talentos. Para isso, basta ter créditos de tempo suficientes para trocar com outros associados do PigTime. Talentos são serviços que associados anunciam no Classificados banco.
-          </p>
+        <div class="col-12 d-flex justify-content-center">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/7QylcZ4pYsw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
       </div>
 
