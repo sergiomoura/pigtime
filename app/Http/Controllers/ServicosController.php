@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Servico;
 use App\User;
+use Illuminate\Support\Facades\DB;
 
 class ServicosController extends Controller
 {
@@ -12,7 +13,7 @@ class ServicosController extends Controller
     public function index() {
 
         // Carregar os serviços do banco de dados
-        $servicos = Servico::where('id_dono','!=',auth()->user()->id)->get();
+        $servicos = Servico::where('id_dono','!=',auth()->user()->id)->whereNull('id_prestador')->get();
         // var_dump($servicos->user());
         // exit;
         foreach ($servicos as $servico) {
@@ -224,6 +225,7 @@ class ServicosController extends Controller
         $servico->id_prestador = $id_prestador;
 
         // Limpar a tabela candidaturas
+        DB::table('candidaturas')->where('servico_id','=',$id)->delete();
 
         // Salvar a alteração no banco de dados
         $servico->save();
