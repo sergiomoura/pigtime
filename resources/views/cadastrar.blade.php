@@ -225,7 +225,7 @@
                                                 <i class="ti-mobile"></i>
                                             </span>
                                         </div>
-                                        <input type="text" class="form-control" id="cep" name="cep" placeholder="CEP" value="{{old('cep')}}">
+                                        <input type="text" class="form-control" id="CEP" name="cep" placeholder="CEP" value="{{old('cep')}}">
                                     </div>
                                 </div>
                             </div>
