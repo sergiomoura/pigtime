@@ -22,7 +22,7 @@ Route::get('/cadastrar', function(){
 });
 
 Route::get('/login', function() {
-	return view('/servicos');
+	return view('admin.perfil');
 });
 
 Route::get('/perfil', function(){
