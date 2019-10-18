@@ -38,16 +38,16 @@ class User extends Authenticatable
     ];
 
     public $rules = [
-        'nome' => 'required | min:1 | max:20',
+        'nome' => 'required | min:1 | max:50',
         'sobrenome' => 'required | min:1 | max:50',
-        'rg' => 'nullable | numeric | min:8 | max:11',
-        'cpf' => 'nullable | numeric | min:9 | max:11',
+        'rg' => 'nullable | min:7 | max:15',
+        'cpf' => 'nullable | min:7 | max:15',
         'email' => 'required | email',
         'endereco' => 'nullable | string | max:30',
-        'numero' => 'nullable | numeric | max:8',
+        'numero' => 'nullable | max:15',
         'complemento' => 'nullable | max:30',
         'bairro' => 'nullable | max:30',
-        'cidade' => 'nullable | string | max:30',
+        'cidade' => 'nullable | max:30',
         'uf' => 'nullable | string | min:2 | max:2',
         'cep' => 'nullable | max:8',
         'telefone_1' => 'nullable | numeric | max:11',
