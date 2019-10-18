@@ -13,7 +13,7 @@ class ServicosController extends Controller
     public function index() {
 
         // Carregar os serviços do banco de dados
-        $servicos = Servico::where('id_dono','!=',auth()->user()->id)->whereNull('id_prestador')->get();
+        $servicos = Servico::where('id_dono','!=',auth()->user()->id)->whereNull('id_prestador')->where('status','=','0')->get();
         // var_dump($servicos->user());
         // exit;
         foreach ($servicos as $servico) {

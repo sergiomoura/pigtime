@@ -27,8 +27,8 @@ class CreateServicosTable extends Migration
             $table->dateTime('horaInicial');
             $table->dateTime('horaFinal');
             $table->bigInteger('id_dono')->unsigned();
-            $table->string('status');
-            $table->string('pagamento');
+            $table->boolean('status')->defalut(1);
+            $table->decimal('pagamento',3,2);
             $table->string('avaliacao')->nullable();
             $table->string('id_prestador')->nullable();
 
