@@ -58,4 +58,9 @@ class User extends Authenticatable
     public function candidaturas(){
         return $this->belongsToMany('App\Servico', 'candidaturas', 'user_id', 'servico_id');
     }
+
+    public function servicos(){
+        return $this->hasMany('App\Servico','id_dono','id');
+    }
+
 }

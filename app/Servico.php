@@ -12,8 +12,8 @@ class Servico extends Model
      * Acessar o id dos donos do serviço
      */
     
-     public function user() {
-        return $this->belongsTo('App\User');
+    public function user() {
+        return $this->belongsTo('App\User','id_dono','id');
     }
 
     public function candidatos(){

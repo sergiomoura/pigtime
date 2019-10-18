@@ -24,7 +24,7 @@ class servicosTableSeeder extends Seeder
         $s->complemento = 'Ap 64';
         $s->horaInicial = '2019-10-09 11:20:00';
         $s->horaFinal = '2019-10-09 12:20:00';
-        $s->id_dono = '2';
+        $s->id_dono = 2;
         $s->status = 'Active';
         $s->avaliacao = 'teste';
         $s->pagamento = "1";
@@ -44,7 +44,7 @@ class servicosTableSeeder extends Seeder
         $s->complemento = 'Ap 64';
         $s->horaInicial = '2019-10-09 11:20:00';
         $s->horaFinal = '2019-10-09 12:20:00';
-        $s->id_dono = '2';
+        $s->id_dono = 2;
         $s->status = 'Active';
         $s->avaliacao = 'teste';
         $s->pagamento = "1";
@@ -64,7 +64,7 @@ class servicosTableSeeder extends Seeder
         $s->complemento = 'Ap 64';
         $s->horaInicial = '2019-10-09 11:20:00';
         $s->horaFinal = '2019-10-09 12:20:00';
-        $s->id_dono = '2';
+        $s->id_dono = 2;
         $s->status = 'Active';
         $s->avaliacao = 'teste';
         $s->pagamento = "1";
@@ -84,7 +84,7 @@ class servicosTableSeeder extends Seeder
         $s->complemento = 'Ap 64';
         $s->horaInicial = '2019-10-09 11:20:00';
         $s->horaFinal = '2019-10-09 12:20:00';
-        $s->id_dono = '1';
+        $s->id_dono = 1;
         $s->status = 'Active';
         $s->avaliacao = 'teste';
         $s->pagamento = "1";
@@ -104,7 +104,7 @@ class servicosTableSeeder extends Seeder
         $s->complemento = 'Ap 64';
         $s->horaInicial = '2019-10-09 11:20:00';
         $s->horaFinal = '2019-10-09 12:20:00';
-        $s->id_dono = '1';
+        $s->id_dono = 1;
         $s->status = 'Active';
         $s->avaliacao = 'teste';
         $s->pagamento = "1";
@@ -124,7 +124,7 @@ class servicosTableSeeder extends Seeder
         $s->complemento = 'Ap 64';
         $s->horaInicial = '2019-10-09 11:20:00';
         $s->horaFinal = '2019-10-09 12:20:00';
-        $s->id_dono = '1';
+        $s->id_dono = 1;
         $s->status = 'Active';
         $s->avaliacao = 'teste';
         $s->pagamento = "1";
